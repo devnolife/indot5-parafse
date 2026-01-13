@@ -2,14 +2,17 @@ from flask import Flask, request, jsonify, send_file
 import os
 import sys
 import json
+import uuid
 from typing import Dict, Any
 import logging
+from werkzeug.utils import secure_filename
 
 # Add the current directory to the path to import our modules
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from config import IndoT5HybridConfig
+from config import IndoT5HybridConfig, UPLOAD_DIR, ALLOWED_EXTENSIONS, MAX_CONTENT_LENGTH
 from engines.indot5_hybrid_engine import IndoT5HybridParaphraser
+from utils.file_parser import FileParser
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -17,8 +20,13 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
-# Global paraphraser instance
+# Configure upload
+app.config['UPLOAD_FOLDER'] = str(UPLOAD_DIR)
+app.config['MAX_CONTENT_LENGTH'] = MAX_CONTENT_LENGTH
+
+# Global instances
 paraphraser = None
+file_parser = FileParser()
 
 def initialize_paraphraser():
     """Initialize the paraphraser with default configuration"""
@@ -83,10 +91,10 @@ def paraphrase():
         
         logger.info(f"Processing text: {text[:50]}... with method: {method}")
         
-        # Generate paraphrases using the correct API
+        # Generate paraphrases using generate_variations for unique results
+        results = paraphraser.generate_variations(text, num_variations=num_variations, method=method)
         paraphrases = []
-        for i in range(num_variations):
-            result = paraphraser.paraphrase(text, method=method)
+        for result in results:
             paraphrases.append({
                 'text': result.paraphrased_text,
                 'quality_score': float(result.quality_score),
@@ -125,6 +133,101 @@ def health():
         'status': 'healthy',
         'paraphraser_ready': paraphraser is not None
     })
+
+def allowed_file(filename):
+    """Check if file extension is allowed"""
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    """Handle file upload and extract text"""
+    try:
+        if 'file' not in request.files:
+            return jsonify({'error': 'No file provided'}), 400
+        
+        file = request.files['file']
+        if file.filename == '':
+            return jsonify({'error': 'No file selected'}), 400
+        
+        if not allowed_file(file.filename):
+            return jsonify({'error': 'File type not allowed. Use PDF or TXT'}), 400
+        
+        # Save file temporarily
+        filename = secure_filename(file.filename)
+        unique_filename = f"{uuid.uuid4().hex}_{filename}"
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], unique_filename)
+        file.save(file_path)
+        
+        try:
+            # Extract text from file
+            result = file_parser.process_file(file_path, chunk=True)
+            
+            # Clean up uploaded file
+            os.remove(file_path)
+            
+            return jsonify({
+                'success': True,
+                'filename': filename,
+                'text': result['cleaned_text'],
+                'chunks': result['chunks'],
+                'chunk_count': result['chunk_count'],
+                'metadata': result['metadata'],
+                'character_count': len(result['cleaned_text'])
+            })
+            
+        except Exception as e:
+            # Clean up on error
+            if os.path.exists(file_path):
+                os.remove(file_path)
+            raise e
+            
+    except Exception as e:
+        logger.error(f"Error uploading file: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/paraphrase-chunks', methods=['POST'])
+def paraphrase_chunks():
+    """Handle paraphrasing of multiple chunks (for large documents)"""
+    try:
+        data = request.get_json()
+        
+        if not data or 'chunks' not in data:
+            return jsonify({'error': 'No chunks provided'}), 400
+        
+        chunks = data['chunks']
+        method = data.get('method', 'hybrid')
+        
+        if not chunks:
+            return jsonify({'error': 'Empty chunks array'}), 400
+        
+        results = []
+        for i, chunk in enumerate(chunks):
+            if chunk.strip():
+                result = paraphraser.paraphrase(chunk.strip(), method=method)
+                results.append({
+                    'chunk_index': i,
+                    'original': chunk,
+                    'paraphrased': result.paraphrased_text,
+                    'quality_score': float(result.quality_score),
+                    'success': result.success
+                })
+        
+        # Combine all paraphrased chunks
+        combined_text = ' '.join([r['paraphrased'] for r in results])
+        avg_quality = sum(r['quality_score'] for r in results) / len(results) if results else 0
+        
+        return jsonify({
+            'success': True,
+            'chunks_processed': len(results),
+            'combined_text': combined_text,
+            'average_quality': avg_quality,
+            'chunk_results': results
+        })
+        
+    except Exception as e:
+        logger.error(f"Error paraphrasing chunks: {e}")
+        return jsonify({'error': str(e)}), 500
 
 @app.errorhandler(404)
 def not_found(error):

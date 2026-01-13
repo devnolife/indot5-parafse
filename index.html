@@ -255,6 +255,151 @@
             display: none;
         }
 
+        /* File Upload Styles */
+        .file-upload-section {
+            margin-top: 15px;
+            padding: 20px;
+            border: 2px dashed #e0e0e0;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        .file-upload-section:hover {
+            border-color: #667eea;
+            background: #f5f5ff;
+        }
+
+        .file-upload-section.drag-over {
+            border-color: #667eea;
+            background: #eff0ff;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-upload-label {
+            cursor: pointer;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .file-upload-label:hover {
+            text-decoration: underline;
+        }
+
+        .file-info {
+            margin-top: 15px;
+            padding: 15px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .file-info.show {
+            display: block;
+        }
+
+        .file-info .filename {
+            font-weight: 600;
+            color: #2e7d32;
+        }
+
+        .file-info .file-stats {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .chunk-progress {
+            margin-top: 15px;
+            display: none;
+        }
+
+        .chunk-progress.show {
+            display: block;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .text-preview {
+            margin-top: 15px;
+            max-height: 150px;
+            overflow-y: auto;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: #555;
+            border: 1px solid #e0e0e0;
+            display: none;
+        }
+
+        .text-preview.show {
+            display: block;
+        }
+
+        .clear-file-btn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .clear-file-btn:hover {
+            background: #d32f2f;
+        }
+
+        .or-divider {
+            margin: 15px 0;
+            text-align: center;
+            color: #999;
+            position: relative;
+        }
+
+        .or-divider::before,
+        .or-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        .or-divider::before {
+            left: 0;
+        }
+
+        .or-divider::after {
+            right: 0;
+        }
+
         @media (max-width: 768px) {
             .main-content {
                 padding: 20px;
@@ -282,6 +427,29 @@
                 <div class="form-group">
                     <label for="inputText">Masukkan teks yang ingin diparafrase:</label>
                     <textarea id="inputText" placeholder="Contoh: Saya sedang belajar bahasa Indonesia dengan antusias." required></textarea>
+                    
+                    <div class="or-divider">atau</div>
+                    
+                    <div class="file-upload-section" id="dropZone">
+                        <input type="file" id="fileInput" class="file-input" accept=".pdf,.txt">
+                        <p>📄 Drag & drop file di sini, atau <label for="fileInput" class="file-upload-label">pilih file</label></p>
+                        <p style="font-size: 0.85em; color: #888; margin-top: 5px;">Format: PDF, TXT (Maks. 16MB)</p>
+                    </div>
+                    
+                    <div class="file-info" id="fileInfo">
+                        <span class="filename" id="fileName"></span>
+                        <div class="file-stats" id="fileStats"></div>
+                        <button type="button" class="clear-file-btn" id="clearFileBtn">✕ Hapus File</button>
+                    </div>
+                    
+                    <div class="text-preview" id="textPreview"></div>
+                    
+                    <div class="chunk-progress" id="chunkProgress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-text" id="progressText">Memproses chunk 0/0...</div>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -349,6 +517,145 @@
     </div>
 
     <script>
+        // File upload state
+        let uploadedChunks = [];
+        let uploadedText = '';
+        
+        // File Upload Handling
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const fileInfo = document.getElementById('fileInfo');
+        const fileName = document.getElementById('fileName');
+        const fileStats = document.getElementById('fileStats');
+        const textPreview = document.getElementById('textPreview');
+        const clearFileBtn = document.getElementById('clearFileBtn');
+        const inputText = document.getElementById('inputText');
+        const chunkProgress = document.getElementById('chunkProgress');
+        const progressFill = document.getElementById('progressFill');
+        const progressText = document.getElementById('progressText');
+        
+        // Drag and drop events
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('drag-over');
+        });
+        
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('drag-over');
+        });
+        
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('drag-over');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFileUpload(files[0]);
+            }
+        });
+        
+        // File input change
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFileUpload(e.target.files[0]);
+            }
+        });
+        
+        // Clear file button
+        clearFileBtn.addEventListener('click', () => {
+            clearUploadedFile();
+        });
+        
+        function clearUploadedFile() {
+            uploadedChunks = [];
+            uploadedText = '';
+            fileInput.value = '';
+            fileInfo.classList.remove('show');
+            textPreview.classList.remove('show');
+            chunkProgress.classList.remove('show');
+            inputText.required = true;
+            inputText.value = '';
+        }
+        
+        async function handleFileUpload(file) {
+            const error = document.getElementById('error');
+            error.style.display = 'none';
+            
+            // Validate file type
+            const allowedTypes = ['application/pdf', 'text/plain'];
+            const allowedExtensions = ['.pdf', '.txt'];
+            const fileExtension = '.' + file.name.split('.').pop().toLowerCase();
+            
+            if (!allowedExtensions.includes(fileExtension)) {
+                error.textContent = 'Format file tidak didukung. Gunakan PDF atau TXT.';
+                error.style.display = 'block';
+                return;
+            }
+            
+            // Validate file size (16MB)
+            if (file.size > 16 * 1024 * 1024) {
+                error.textContent = 'Ukuran file terlalu besar. Maksimal 16MB.';
+                error.style.display = 'block';
+                return;
+            }
+            
+            // Show loading
+            fileName.textContent = '📄 Mengupload: ' + file.name;
+            fileStats.textContent = 'Mengekstrak teks...';
+            fileInfo.classList.add('show');
+            
+            const formData = new FormData();
+            formData.append('file', file);
+            
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok && data.success) {
+                    // Store chunks for later processing
+                    uploadedChunks = data.chunks || [];
+                    uploadedText = data.text || '';
+                    
+                    // Update UI
+                    fileName.textContent = '✅ ' + file.name;
+                    
+                    let statsText = `${data.character_count.toLocaleString()} karakter`;
+                    if (data.metadata.pages) {
+                        statsText += ` | ${data.metadata.pages} halaman`;
+                    }
+                    if (data.chunk_count > 1) {
+                        statsText += ` | ${data.chunk_count} chunk`;
+                    }
+                    fileStats.textContent = statsText;
+                    
+                    // Show text preview
+                    const previewText = uploadedText.substring(0, 500);
+                    textPreview.textContent = previewText + (uploadedText.length > 500 ? '...' : '');
+                    textPreview.classList.add('show');
+                    
+                    // Put first chunk or full text in textarea
+                    if (uploadedChunks.length > 0) {
+                        inputText.value = uploadedChunks[0];
+                    } else {
+                        inputText.value = uploadedText;
+                    }
+                    inputText.required = false;
+                    
+                } else {
+                    throw new Error(data.error || 'Gagal mengekstrak teks dari file');
+                }
+                
+            } catch (err) {
+                error.textContent = err.message;
+                error.style.display = 'block';
+                clearUploadedFile();
+            }
+        }
+        
+        // Form submit handler
         document.getElementById('paraphraseForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -365,40 +672,123 @@
             loading.style.display = 'block';
             submitBtn.disabled = true;
             
-            // Get form data
-            const formData = {
-                text: document.getElementById('inputText').value,
-                method: document.querySelector('input[name="method"]:checked').value,
-                num_variations: parseInt(document.getElementById('numVariations').value),
-                min_quality: parseFloat(document.getElementById('minQuality').value),
-                max_length: parseInt(document.getElementById('maxLength').value),
-                temperature: parseFloat(document.getElementById('temperature').value)
-            };
+            const method = document.querySelector('input[name="method"]:checked').value;
             
             try {
-                const response = await fetch('/paraphrase', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                });
-                
-                const data = await response.json();
-                
-                if (response.ok) {
-                    displayResults(data);
+                // Check if we have multiple chunks to process
+                if (uploadedChunks.length > 1) {
+                    // Process chunks
+                    chunkProgress.classList.add('show');
+                    
+                    const response = await fetch('/paraphrase-chunks', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            chunks: uploadedChunks,
+                            method: method
+                        })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (response.ok && data.success) {
+                        displayChunkResults(data);
+                    } else {
+                        throw new Error(data.error || 'Gagal memproses chunks');
+                    }
+                    
                 } else {
-                    throw new Error(data.error || 'Terjadi kesalahan');
+                    // Normal single text processing
+                    const formData = {
+                        text: document.getElementById('inputText').value,
+                        method: method,
+                        num_variations: parseInt(document.getElementById('numVariations').value),
+                        min_quality: parseFloat(document.getElementById('minQuality').value),
+                        max_length: parseInt(document.getElementById('maxLength').value),
+                        temperature: parseFloat(document.getElementById('temperature').value)
+                    };
+                    
+                    const response = await fetch('/paraphrase', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (response.ok) {
+                        displayResults(data);
+                    } else {
+                        throw new Error(data.error || 'Terjadi kesalahan');
+                    }
                 }
             } catch (err) {
                 error.textContent = err.message;
                 error.style.display = 'block';
             } finally {
                 loading.style.display = 'none';
+                chunkProgress.classList.remove('show');
                 submitBtn.disabled = false;
             }
         });
+        
+        function displayChunkResults(data) {
+            const results = document.getElementById('results');
+            results.innerHTML = '';
+            
+            // Show combined result first
+            const combinedItem = document.createElement('div');
+            combinedItem.className = 'result-item';
+            combinedItem.innerHTML = `
+                <h3>📄 Hasil Parafrase Lengkap</h3>
+                <div class="result-text">${data.combined_text}</div>
+                <div class="quality-score">
+                    <span>Rata-rata Kualitas:</span>
+                    <div class="score-bar">
+                        <div class="score-fill" style="width: ${Math.round(data.average_quality)}%"></div>
+                    </div>
+                    <span>${Math.round(data.average_quality)}%</span>
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                    ✅ ${data.chunks_processed} chunk berhasil diproses
+                </p>
+            `;
+            results.appendChild(combinedItem);
+            
+            // Show individual chunks (collapsed by default)
+            if (data.chunk_results && data.chunk_results.length > 1) {
+                const detailsContainer = document.createElement('details');
+                detailsContainer.style.marginTop = '15px';
+                detailsContainer.innerHTML = `
+                    <summary style="cursor: pointer; color: #667eea; font-weight: 600;">
+                        Lihat detail per-chunk (${data.chunk_results.length} chunk)
+                    </summary>
+                `;
+                
+                data.chunk_results.forEach((chunk, index) => {
+                    const chunkItem = document.createElement('div');
+                    chunkItem.className = 'result-item';
+                    chunkItem.style.marginTop = '10px';
+                    chunkItem.innerHTML = `
+                        <h3>Chunk ${index + 1}</h3>
+                        <p style="font-size: 0.85em; color: #888; margin-bottom: 8px;"><strong>Original:</strong> ${chunk.original.substring(0, 100)}...</p>
+                        <div class="result-text">${chunk.paraphrased}</div>
+                        <div class="quality-score">
+                            <span>Kualitas:</span>
+                            <div class="score-bar">
+                                <div class="score-fill" style="width: ${Math.round(chunk.quality_score)}%"></div>
+                            </div>
+                            <span>${Math.round(chunk.quality_score)}%</span>
+                        </div>
+                    `;
+                    detailsContainer.appendChild(chunkItem);
+                });
+                
+                results.appendChild(detailsContainer);
+            }
+            
+            results.style.display = 'block';
+        }
         
         function displayResults(data) {
             const results = document.getElementById('results');
@@ -409,8 +799,9 @@
                     const resultItem = document.createElement('div');
                     resultItem.className = 'result-item';
                     
+                    // quality_score sudah dalam skala 0-100 dari backend
                     const qualityScore = item.quality_score || 0;
-                    const scorePercentage = Math.round(qualityScore * 100);
+                    const scorePercentage = Math.round(qualityScore);
                     
                     resultItem.innerHTML = `
                         <h3>Variasi ${index + 1}</h3>

@@ -106,7 +106,11 @@ class IndoT5HybridParaphraser:
         try:
             # Load IndoT5 model
             logger.info(f"🔄 Loading IndoT5 model: {self.model_name}")
-            self.tokenizer = AutoTokenizer.from_pretrained(self.model_name, use_fast=False)
+            self.tokenizer = AutoTokenizer.from_pretrained(
+                self.model_name, 
+                use_fast=False,
+                legacy=True
+            )
             self.model = AutoModelForSeq2SeqLM.from_pretrained(self.model_name)
             
             if self.use_gpu:
@@ -568,18 +572,31 @@ class IndoT5HybridParaphraser:
                 error_message=str(e)
             )
     
-    def generate_variations(self, text: str, num_variations: int = 3) -> List[IndoT5HybridResult]:
+    def clear_cache(self, text: str = None):
+        """Clear result cache for a specific text or all cache"""
+        if self.enable_caching:
+            if text:
+                self._result_cache.pop(text, None)
+            else:
+                self._result_cache.clear()
+    
+    def generate_variations(self, text: str, num_variations: int = 3, method: str = "hybrid") -> List[IndoT5HybridResult]:
         """
         Generate multiple paraphrase variations
         
         Args:
             text: Input text
             num_variations: Number of variations to generate
+            method: Paraphrasing method ("hybrid", "neural", "rule-based")
             
         Returns:
             List of IndoT5HybridResult objects
         """
         variations = []
+        seen_texts = set()
+        
+        # Clear cache for this text to ensure unique variations
+        self.clear_cache(text)
         
         for i in range(num_variations):
             # Vary the synonym rate and transformation parameters
@@ -587,12 +604,23 @@ class IndoT5HybridParaphraser:
             original_transforms = self.max_transformations
             
             # Adjust parameters for variation
-            self.synonym_rate = min(1.0, original_rate + (i * 0.1))
+            self.synonym_rate = min(1.0, original_rate + (i * 0.15))
             self.max_transformations = min(5, original_transforms + i)
             
+            # Temporarily disable caching to get unique variations
+            original_caching = self.enable_caching
+            self.enable_caching = False
+            
             # Generate variation
-            result = self.paraphrase(text, method="hybrid")
-            variations.append(result)
+            result = self.paraphrase(text, method=method)
+            
+            # Restore caching
+            self.enable_caching = original_caching
+            
+            # Only add if unique
+            if result.paraphrased_text not in seen_texts:
+                variations.append(result)
+                seen_texts.add(result.paraphrased_text)
             
             # Restore original parameters
             self.synonym_rate = original_rate
