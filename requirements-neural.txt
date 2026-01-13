@@ -1,0 +1,31 @@
+# Dependencies for IndoT5 Hybrid Paraphraser
+# Core dependencies for IndoT5 neural processing and rule-based transformations
+
+# Core ML Libraries
+torch>=1.9.0
+transformers>=4.21.0
+tokenizers>=0.13.0
+
+# HuggingFace Hub
+huggingface-hub>=0.10.0
+
+# Text processing
+nltk>=3.7
+numpy>=1.21.0
+
+# Quality assessment
+sentence-transformers>=2.2.0
+scikit-learn>=1.1.0
+
+# Progress and utilities
+tqdm>=4.64.0
+
+# Configuration
+pyyaml>=6.0
+
+# Web interface
+flask>=2.0.0
+
+# Development and testing
+pytest>=7.0.0
+pytest-cov>=3.0.0

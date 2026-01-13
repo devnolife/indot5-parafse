@@ -1,0 +1,92 @@
+{
+  "comparison_id": "COMPARE-20260112_175550",
+  "timestamp": "2026-01-12T17:55:59.070486",
+  "configuration": {
+    "model_name": "Wikidepia/IndoT5-base",
+    "synonym_rate": 0.3,
+    "quality_threshold": 60.0
+  },
+  "test_sentences_count": 3,
+  "method_comparison": {
+    "hybrid": {
+      "summary": {
+        "total_sentences": 3,
+        "success_count": 0,
+        "success_rate": 0.0,
+        "average_quality_score": 0,
+        "average_semantic_similarity": 0,
+        "total_processing_time": 4.36,
+        "average_processing_time": 1.45
+      },
+      "sample_results": [
+        {
+          "original_text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+          "paraphrased_text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+          "method_used": "hybrid",
+          "transformations_applied": [
+            "Error: Processing failed"
+          ],
+          "quality_score": 0.0,
+          "confidence_score": 0.0,
+          "neural_confidence": 0.0,
+          "semantic_similarity": 0.0,
+          "lexical_diversity": 0.0,
+          "syntactic_complexity": 0.0,
+          "fluency_score": 0.0,
+          "processing_time": 1.0972,
+          "word_changes": 0,
+          "syntax_changes": 0,
+          "success": false,
+          "error_message": "'list' object has no attribute 'get'",
+          "alternatives": []
+        },
+        {
+          "original_text": "Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.",
+          "paraphrased_text": "Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.",
+          "method_used": "hybrid",
+          "transformations_applied": [
+            "Error: Processing failed"
+          ],
+          "quality_score": 0.0,
+          "confidence_score": 0.0,
+          "neural_confidence": 0.0,
+          "semantic_similarity": 0.0,
+          "lexical_diversity": 0.0,
+          "syntactic_complexity": 0.0,
+          "fluency_score": 0.0,
+          "processing_time": 2.4933,
+          "word_changes": 0,
+          "syntax_changes": 0,
+          "success": false,
+          "error_message": "string indices must be integers, not 'str'",
+          "alternatives": []
+        },
+        {
+          "original_text": "Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.",
+          "paraphrased_text": "Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.",
+          "method_used": "hybrid",
+          "transformations_applied": [
+            "Error: Processing failed"
+          ],
+          "quality_score": 0.0,
+          "confidence_score": 0.0,
+          "neural_confidence": 0.0,
+          "semantic_similarity": 0.0,
+          "lexical_diversity": 0.0,
+          "syntactic_complexity": 0.0,
+          "fluency_score": 0.0,
+          "processing_time": 0.7687,
+          "word_changes": 0,
+          "syntax_changes": 0,
+          "success": false,
+          "error_message": "string indices must be integers, not 'str'",
+          "alternatives": []
+        }
+      ]
+    },
+    "neural": {
+      "summary": {
+        "total_sentences": 3,
+        "success_count": 3,
+        "success_rate": 100.0,
+        "average_quality_score": 

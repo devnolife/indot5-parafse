@@ -1,0 +1,40 @@
+{
+  "experiment_id": "EXP-20260112_180156",
+  "timestamp": "2026-01-12T18:01:57.506926",
+  "configuration": {
+    "model_name": "Wikidepia/IndoT5-base",
+    "method": "hybrid",
+    "synonym_rate": 0.3,
+    "quality_threshold": 60.0,
+    "use_gpu": false
+  },
+  "input": {
+    "text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+    "word_count": 11
+  },
+  "result": {
+    "original_text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+    "paraphrased_text": "Investigasi metode dimenggunakan oleh ini kualitatif informasi dimenganalisis oleh untuk wawancara dari responden.",
+    "method_used": "hybrid",
+    "transformations_applied": [
+      "neural_generation",
+      "synonym: Penelitian -> Investigasi",
+      "synonym: data -> informasi",
+      "syntactic: active_to_passive"
+    ],
+    "quality_score": 60.15999984741211,
+    "confidence_score": 1.0,
+    "neural_confidence": 0.4909,
+    "semantic_similarity": 0.6843000054359436,
+    "lexical_diversity": 0.4545,
+    "syntactic_complexity": 0.3333,
+    "fluency_score": 0.9091,
+    "processing_time": 1.4057,
+    "word_changes": 2,
+    "syntax_changes": 1,
+    "success": true,
+    "error_message": null,
+    "alternatives": []
+  },
+  "total_processing_time": 1.4057
+}

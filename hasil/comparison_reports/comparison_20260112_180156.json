@@ -1,0 +1,258 @@
+{
+  "comparison_id": "COMPARE-20260112_180207",
+  "timestamp": "2026-01-12T18:02:07.645936",
+  "configuration": {
+    "model_name": "Wikidepia/IndoT5-base",
+    "synonym_rate": 0.3,
+    "quality_threshold": 60.0
+  },
+  "test_sentences_count": 3,
+  "method_comparison": {
+    "hybrid": {
+      "summary": {
+        "total_sentences": 3,
+        "success_count": 3,
+        "success_rate": 100.0,
+        "average_quality_score": 50.17,
+        "average_semantic_similarity": 0.5582,
+        "total_processing_time": 0.0,
+        "average_processing_time": 0.0
+      },
+      "sample_results": [
+        {
+          "original_text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+          "paraphrased_text": "Investigasi metode dimenggunakan oleh ini kualitatif informasi dimenganalisis oleh untuk wawancara dari responden.",
+          "method_used": "hybrid",
+          "transformations_applied": [
+            "neural_generation",
+            "synonym: Penelitian -> Investigasi",
+            "synonym: data -> informasi",
+            "syntactic: active_to_passive"
+          ],
+          "quality_score": 60.15999984741211,
+          "confidence_score": 1.0,
+          "neural_confidence": 0.4909,
+          "semantic_similarity": 0.6843000054359436,
+          "lexical_diversity": 0.4545,
+          "syntactic_complexity": 0.3333,
+          "fluency_score": 0.9091,
+          "processing_time": 0.0,
+          "word_changes": 2,
+          "syntax_changes": 1,
+          "success": true,
+          "error_message": null,
+          "alternatives": []
+        },
+        {
+          "original_text": "Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.",
+          "paraphrased_text": ":ity: Paraphrase: Paraphrase: Paraphrase: Paraphrase: Paraphrase: Paraphrasean paraphrase:",
+          "method_used": "hybrid",
+          "transformations_applied": [
+            "neural_generation"
+          ],
+          "quality_score": 26.020000457763672,
+          "confidence_score": 0.9934999942779541,
+          "neural_confidence": 0.7333,
+          "semantic_similarity": 0.08860000222921371,
+          "lexical_diversity": 0.25,
+          "syntactic_complexity": 0.0,
+          "fluency_score": 0.8333,
+          "processing_time": 0.0,
+          "word_changes": 0,
+          "syntax_changes": 0,
+          "success": true,
+          "error_message": null,
+          "alternatives": []
+        },
+        {
+          "original_text": "Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.",
+          "paraphrased_text": "Pemerintah program dimencanangkan oleh Indonesia digitalisasi pelayanan dimeningkatkan oleh untuk publik.",
+          "method_used": "hybrid",
+          "transformations_applied": [
+            "neural_generation",
+            "syntactic: active_to_passive"
+          ],
+          "quality_score": 64.33999633789062,
+          "confidence_score": 1.0,
+          "neural_confidence": 0.5556,
+          "semantic_similarity": 0.9017999768257141,
+          "lexical_diversity": 0.3333,
+          "syntactic_complexity": 0.3333,
+          "fluency_score": 0.8889,
+          "processing_time": 0.0,
+          "word_changes": 0,
+          "syntax_changes": 1,
+          "success": true,
+          "error_message": null,
+          "alternatives": []
+        }
+      ]
+    },
+    "neural": {
+      "summary": {
+        "total_sentences": 3,
+        "success_count": 3,
+        "success_rate": 100.0,
+        "average_quality_score": 50.17,
+        "average_semantic_similarity": 0.5582,
+        "total_processing_time": 0.0,
+        "average_processing_time": 0.0
+      },
+      "sample_results": [
+        {
+          "original_text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+          "paraphrased_text": "Investigasi metode dimenggunakan oleh ini kualitatif informasi dimenganalisis oleh untuk wawancara dari responden.",
+          "method_used": "hybrid",
+          "transformations_applied": [
+            "neural_generation",
+            "synonym: Penelitian -> Investigasi",
+            "synonym: data -> informasi",
+            "syntactic: active_to_passive"
+          ],
+          "quality_score": 60.15999984741211,
+          "confidence_score": 1.0,
+          "neural_confidence": 0.4909,
+          "semantic_similarity": 0.6843000054359436,
+          "lexical_diversity": 0.4545,
+          "syntactic_complexity": 0.3333,
+          "fluency_score": 0.9091,
+          "processing_time": 0.0,
+          "word_changes": 2,
+          "syntax_changes": 1,
+          "success": true,
+          "error_message": null,
+          "alternatives": []
+        },
+        {
+          "original_text": "Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.",
+          "paraphrased_text": ":ity: Paraphrase: Paraphrase: Paraphrase: Paraphrase: Paraphrase: Paraphrasean paraphrase:",
+          "method_used": "hybrid",
+          "transformations_applied": [
+            "neural_generation"
+          ],
+          "quality_score": 26.020000457763672,
+          "confidence_score": 0.9934999942779541,
+          "neural_confidence": 0.7333,
+          "semantic_similarity": 0.08860000222921371,
+          "lexical_diversity": 0.25,
+          "syntactic_complexity": 0.0,
+          "fluency_score": 0.8333,
+          "processing_time": 0.0,
+          "word_changes": 0,
+          "syntax_changes": 0,
+          "success": true,
+          "error_message": null,
+          "alternatives": []
+        },
+        {
+          "original_text": "Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.",
+          "paraphrased_text": "Pemerintah program dimencanangkan oleh Indonesia digitalisasi pelayanan dimeningkatkan oleh untuk publik.",
+          "method_used": "hybrid",
+          "transformations_applied": [
+            "neural_generation",
+            "syntactic: active_to_passive"
+          ],
+          "quality_score": 64.33999633789062,
+          "confidence_score": 1.0,
+          "neural_confidence": 0.5556,
+          "semantic_similarity": 0.9017999768257141,
+          "lexical_diversity": 0.3333,
+          "syntactic_complexity": 0.3333,
+          "fluency_score": 0.8889,
+          "processing_time": 0.0,
+          "word_changes": 0,
+          "syntax_changes": 1,
+          "success": true,
+          "error_message": null,
+          "alternatives": []
+        }
+      ]
+    },
+    "rule-based": {
+      "summary": {
+        "total_sentences": 3,
+        "success_count": 3,
+        "success_rate": 100.0,
+        "average_quality_score": 50.17,
+        "average_semantic_similarity": 0.5582,
+        "total_processing_time": 0.0,
+        "average_processing_time": 0.0
+      },
+      "sample_results": [
+        {
+          "original_text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+          "paraphrased_text": "Investigasi metode dimenggunakan oleh ini kualitatif informasi dimenganalisis oleh untuk wawancara dari responden.",
+          "method_used": "hybrid",
+          "transformations_applied": [
+            "neural_generation",
+            "synonym: Penelitian -> Investigasi",
+            "synonym: data -> informasi",
+            "syntactic: active_to_passive"
+          ],
+          "quality_score": 60.15999984741211,
+          "confidence_score": 1.0,
+          "neural_confidence": 0.4909,
+          "semantic_similarity": 0.6843000054359436,
+          "lexical_diversity": 0.4545,
+          "syntactic_complexity": 0.3333,
+          "fluency_score": 0.9091,
+          "processing_time": 0.0,
+          "word_changes": 2,
+          "syntax_changes": 1,
+          "success": true,
+          "error_message": null,
+          "alternatives": []
+        },
+        {
+          "original_text": "Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.",
+          "paraphrased_text": ":ity: Paraphrase: Paraphrase: Paraphrase: Paraphrase: Paraphrase: Paraphrasean paraphrase:",
+          "method_used": "hybrid",
+          "transformations_applied": [
+            "neural_generation"
+          ],
+          "quality_score": 26.020000457763672,
+          "confidence_score": 0.9934999942779541,
+          "neural_confidence": 0.7333,
+          "semantic_similarity": 0.08860000222921371,
+          "lexical_diversity": 0.25,
+          "syntactic_complexity": 0.0,
+          "fluency_score": 0.8333,
+          "processing_time": 0.0,
+          "word_changes": 0,
+          "syntax_changes": 0,
+          "success": true,
+          "error_message": null,
+          "alternatives": []
+        },
+        {
+          "original_text": "Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.",
+          "paraphrased_text": "Pemerintah program dimencanangkan oleh Indonesia digitalisasi pelayanan dimeningkatkan oleh untuk publik.",
+          "method_used": "hybrid",
+          "transformations_applied": [
+            "neural_generation",
+            "syntactic: active_to_passive"
+          ],
+          "quality_score": 64.33999633789062,
+          "confidence_score": 1.0,
+          "neural_confidence": 0.5556,
+          "semantic_similarity": 0.9017999768257141,
+          "lexical_diversity": 0.3333,
+          "syntactic_complexity": 0.3333,
+          "fluency_score": 0.8889,
+          "processing_time": 0.0,
+          "word_changes": 0,
+          "syntax_changes": 1,
+          "success": true,
+          "error_message": null,
+          "alternatives": []
+        }
+      ]
+    }
+  },
+  "analysis": {
+    "best_quality": "hybrid",
+    "best_semantic": "hybrid",
+    "fastest": "hybrid",
+    "highest_success": "hybrid"
+  }
+}

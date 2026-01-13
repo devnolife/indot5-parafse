@@ -1,0 +1,59 @@
+# Dataset Kalimat Penelitian untuk Pengujian Parafrase
+# Setiap baris adalah satu kalimat dalam Bahasa Indonesia
+# Digunakan sebagai input untuk IndoT5 Hybrid Paraphraser
+
+# Kategori: Akademik/Penelitian
+Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.
+Hasil penelitian menunjukkan bahwa motivasi belajar berpengaruh terhadap prestasi akademik siswa.
+Hipotesis penelitian diuji menggunakan analisis regresi linear berganda.
+Data dikumpulkan melalui observasi partisipatif dan wawancara mendalam.
+Validitas instrumen penelitian diuji menggunakan teknik korelasi product moment.
+
+# Kategori: Teknologi
+Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.
+Inovasi teknologi informasi membantu meningkatkan efisiensi dalam berbagai sektor industri.
+Pengembangan aplikasi mobile memerlukan pemahaman mendalam tentang kebutuhan pengguna.
+Cloud computing memungkinkan penyimpanan data secara terdistribusi dan aman.
+Machine learning digunakan untuk memprediksi pola perilaku konsumen.
+
+# Kategori: Pendidikan
+Mahasiswa diharapkan mampu mengembangkan kemampuan berpikir kritis melalui kegiatan pembelajaran.
+Pendidikan karakter menjadi fokus utama dalam kurikulum pendidikan nasional saat ini.
+Pembelajaran daring membutuhkan infrastruktur teknologi yang memadai.
+Guru berperan penting dalam membentuk karakter dan kepribadian siswa.
+Evaluasi pembelajaran dilakukan secara komprehensif meliputi aspek kognitif afektif dan psikomotorik.
+
+# Kategori: Ekonomi
+Ekonomi digital membuka peluang baru bagi pelaku usaha mikro kecil dan menengah.
+Pertumbuhan ekonomi nasional dipengaruhi oleh berbagai faktor internal dan eksternal.
+Inflasi dapat mempengaruhi daya beli masyarakat dan stabilitas ekonomi.
+Investasi asing langsung berkontribusi terhadap penciptaan lapangan kerja.
+Kebijakan fiskal pemerintah bertujuan untuk menstabilkan perekonomian nasional.
+
+# Kategori: Lingkungan
+Perubahan iklim global mempengaruhi pola cuaca dan mengancam ketahanan pangan di berbagai negara.
+Konservasi hutan mangrove penting untuk melindungi ekosistem pesisir.
+Pengelolaan sampah plastik menjadi tantangan serius bagi kota-kota besar.
+Energi terbarukan merupakan solusi untuk mengurangi ketergantungan pada bahan bakar fosil.
+Keanekaragaman hayati Indonesia perlu dilindungi melalui kebijakan yang tepat.
+
+# Kategori: Sosial Budaya
+Penggunaan media sosial telah mengubah cara masyarakat berkomunikasi dan berinteraksi.
+Budaya lokal perlu dilestarikan sebagai identitas bangsa Indonesia.
+Modernisasi membawa perubahan signifikan terhadap nilai-nilai tradisional masyarakat.
+Gotong royong merupakan nilai luhur bangsa Indonesia yang perlu dipertahankan.
+Pluralisme menjadi kekuatan Indonesia dalam membangun persatuan dan kesatuan.
+
+# Kategori: Kesehatan
+Pola hidup sehat meliputi konsumsi makanan bergizi dan olahraga teratur.
+Vaksinasi massal berhasil menekan penyebaran penyakit menular di masyarakat.
+Kesehatan mental sama pentingnya dengan kesehatan fisik dalam kehidupan sehari-hari.
+Fasilitas kesehatan di daerah terpencil masih perlu ditingkatkan.
+Pencegahan penyakit lebih efektif dan efisien dibandingkan pengobatan.
+
+# Kategori: Pemerintahan
+Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.
+Reformasi birokrasi bertujuan untuk menciptakan pemerintahan yang bersih dan efektif.
+Desentralisasi memberikan kewenangan lebih besar kepada pemerintah daerah.
+Transparansi anggaran publik meningkatkan kepercayaan masyarakat terhadap pemerintah.
+Partisipasi masyarakat dalam pembangunan merupakan kunci keberhasilan program pemerintah.

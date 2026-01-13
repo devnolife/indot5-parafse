@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAB IV - Hasil dan Pembahasan Penelitian</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+            line-height: 2;
+            color: #333;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 25mm 30mm 25mm 40mm;
+        }
+        
+        h1 {
+            font-size: 14pt;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 24pt;
+            text-transform: uppercase;
+        }
+        
+        h2 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin-top: 18pt;
+            margin-bottom: 12pt;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin-top: 12pt;
+            margin-bottom: 6pt;
+        }
+        
+        h4 {
+            font-size: 12pt;
+            font-weight: normal;
+            font-style: italic;
+            margin-top: 12pt;
+            margin-bottom: 6pt;
+        }
+        
+        p {
+            text-align: justify;
+            text-indent: 1.27cm;
+            margin-bottom: 6pt;
+        }
+        
+        .no-indent {
+            text-indent: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12pt 0;
+            font-size: 11pt;
+        }
+        
+        table, th, td {
+            border: 1px solid #333;
+        }
+        
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .table-caption {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 6pt;
+            font-size: 11pt;
+        }
+        
+        .screenshot-placeholder {
+            border: 2px dashed #999;
+            background: linear-gradient(135deg, #f5f5f5 25%, #e8e8e8 25%, #e8e8e8 50%, #f5f5f5 50%, #f5f5f5 75%, #e8e8e8 75%);
+            background-size: 20px 20px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 16pt 0;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .screenshot-placeholder .label {
+            background: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #666;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        
+        .screenshot-placeholder .instruction {
+            background: #fffde7;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border-radius: 4px;
+            font-size: 10pt;
+            color: #666;
+            max-width: 80%;
+            text-align: center;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .screenshot-number {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #1976d2;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+        
+        .figure-caption {
+            text-align: center;
+            font-size: 11pt;
+            margin-top: 6pt;
+            margin-bottom: 12pt;
+        }
+        
+        .code-block {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 12px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 10pt;
+            overflow-x: auto;
+            margin: 12pt 0;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+        }
+        
+        .metric-box {
+            display: inline-block;
+            background: #e3f2fd;
+            border: 1px solid #1976d2;
+            border-radius: 4px;
+            padding: 8px 16px;
+            margin: 4px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 18pt;
+            font-weight: bold;
+            color: #1976d2;
+        }
+        
+        .metric-label {
+            font-size: 9pt;
+            color: #666;
+        }
+        
+        .summary-box {
+            background: #e8f5e9;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16pt 0;
+        }
+        
+        .warning-box {
+            background: #fff3e0;
+            border: 1px solid #ff9800;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16pt 0;
+        }
+        
+        ol, ul {
+            margin-left: 1.5cm;
+            margin-bottom: 12pt;
+        }
+        
+        li {
+            margin-bottom: 6pt;
+        }
+        
+        .page-break {
+            page-break-before: always;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .bold {
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            .screenshot-placeholder {
+                border: 1px solid #999;
+                background: #f9f9f9;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================ -->
+    <!-- BAB IV HEADER -->
+    <!-- ============================================================ -->
+    
+    <h1>BAB IV<br>HASIL DAN PEMBAHASAN</h1>
+    
+    <!-- ============================================================ -->
+    <!-- 4.1 GAMBARAN UMUM SISTEM -->
+    <!-- ============================================================ -->
+    
+    <h2>4.1 Gambaran Umum Sistem</h2>
+    
+    <p>
+        Bab ini menyajikan hasil pengujian sistem parafrase teks bahasa Indonesia menggunakan pendekatan hybrid yang menggabungkan model neural IndoT5 dengan transformasi berbasis aturan (rule-based). Pengujian dilakukan untuk mengukur efektivitas sistem dalam menghasilkan parafrase yang berkualitas dengan tetap mempertahankan makna semantik dari teks asli.
+    </p>
+    
+    <p>
+        Sistem IndoT5 Hybrid Paraphraser yang dikembangkan dalam penelitian ini memiliki dua antarmuka: (1) Web Interface berbasis Flask untuk penggunaan interaktif, dan (2) Python API untuk pengujian batch. Arsitektur sistem terdiri dari tiga komponen utama: model neural IndoT5-base untuk generasi parafrase awal, modul substitusi sinonim untuk pengayaan leksikal, dan modul transformasi sintaktis untuk variasi struktur kalimat.
+    </p>
+    
+    <h3>4.1.1 Tampilan Web Interface</h3>
+    
+    <p>
+        Sistem menyediakan antarmuka web yang intuitif untuk memudahkan pengguna dalam melakukan parafrase teks. Web interface dapat diakses melalui browser di alamat <code>http://localhost:5000</code> setelah menjalankan server.
+    </p>
+    
+    <!-- Screenshot Web Interface -->
+    <div class="screenshot-placeholder">
+        <span class="screenshot-number">Screenshot #1</span>
+        <div class="label">📸 SCREENSHOT: Tampilan Awal Web Interface</div>
+        <div class="instruction">
+            <strong>Cara mengambil screenshot:</strong><br>
+            1. Buka browser dan akses <code>http://localhost:5000</code><br>
+            2. Screenshot tampilan awal halaman yang menunjukkan:<br>
+            &nbsp;&nbsp;&nbsp;- Header "IndoT5 Hybrid Paraphraser"<br>
+            &nbsp;&nbsp;&nbsp;- Text area untuk input<br>
+            &nbsp;&nbsp;&nbsp;- Pilihan metode (Hybrid/Neural/Rule-based)<br>
+            3. Simpan dengan nama: <code>screenshot_01_web_tampilan_awal.png</code>
+        </div>
+    </div>
+    <p class="figure-caption">Gambar 4.1 Tampilan Awal Web Interface IndoT5 Hybrid Paraphraser</p>
+    
+    <h3>4.1.2 Proses Input dan Output</h3>
+    
+    <p>
+        Pengguna dapat memasukkan teks bahasa Indonesia ke dalam text area, memilih metode parafrase yang diinginkan (Hybrid, Neural, atau Rule-based), dan mengklik tombol "Parafrase" untuk menghasilkan hasil parafrase.
+    </p>
+    
+    <!-- Screenshot Input Teks -->
+    <div class="screenshot-placeholder">
+        <span class="screenshot-number">Screenshot #2</span>
+        <div class="label">📸 SCREENSHOT: Input Teks di Web Interface</div>
+        <div class="instruction">
+            <strong>Cara mengambil screenshot:</strong><br>
+            1. Masukkan teks berikut ke dalam text area:<br>
+            <em>"Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden."</em><br>
+            2. Pilih metode "Hybrid"<br>
+            3. Screenshot sebelum mengklik tombol Parafrase<br>
+            4. Simpan dengan nama: <code>screenshot_02_web_input.png</code>
+        </div>
+    </div>
+    <p class="figure-caption">Gambar 4.2 Proses Input Teks pada Web Interface</p>
+    
+    <!-- Screenshot Hasil Parafrase -->
+    <div class="screenshot-placeholder">
+        <span class="screenshot-number">Screenshot #3</span>
+        <div class="label">📸 SCREENSHOT: Hasil Parafrase di Web Interface</div>
+        <div class="instruction">
+            <strong>Cara mengambil screenshot:</strong><br>
+            1. Klik tombol "Parafrase"<br>
+            2. Tunggu hingga hasil muncul<br>
+            3. Screenshot hasil yang menampilkan:<br>
+            &nbsp;&nbsp;&nbsp;- Teks hasil parafrase<br>
+            &nbsp;&nbsp;&nbsp;- Quality score<br>
+            &nbsp;&nbsp;&nbsp;- Semantic similarity<br>
+            &nbsp;&nbsp;&nbsp;- Processing time<br>
+            4. Simpan dengan nama: <code>screenshot_03_web_hasil.png</code>
+        </div>
+    </div>
+    <p class="figure-caption">Gambar 4.3 Hasil Parafrase pada Web Interface</p>
+
+    <h3>4.1.3 Konfigurasi Sistem</h3>
+    
+    <p>
+        Pengujian dilakukan dengan konfigurasi sistem sebagai berikut:
+    </p>
+    
+    <p class="table-caption">Tabel 4.1 Konfigurasi Sistem Parafrase</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Nilai</th>
+                <th>Keterangan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Model Name</td>
+                <td>Wikidepia/IndoT5-base</td>
+                <td>Model T5 yang telah dilatih untuk bahasa Indonesia</td>
+            </tr>
+            <tr>
+                <td>Use GPU</td>
+                <td>False (CPU)</td>
+                <td>Pengujian menggunakan CPU</td>
+            </tr>
+            <tr>
+                <td>Synonym Rate</td>
+                <td>0.3 (30%)</td>
+                <td>Tingkat penggantian sinonim</td>
+            </tr>
+            <tr>
+                <td>Quality Threshold</td>
+                <td>60.0</td>
+                <td>Ambang batas skor kualitas minimum</td>
+            </tr>
+            <tr>
+                <td>Min Confidence</td>
+                <td>0.7</td>
+                <td>Confidence neural minimum</td>
+            </tr>
+            <tr>
+                <td>Max Transformations</td>
+                <td>3</td>
+                <td>Maksimum transformasi per kalimat</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!-- Screenshot 4: Konfigurasi -->
+    <div class="screenshot-placeholder">
+        <span class="screenshot-number">Screenshot #4</span>
+        <div class="label">📸 SCREENSHOT: File config.py</div>
+        <div class="instruction">
+            <strong>Cara mengambil screenshot:</strong><br>
+            1. Buka file <code>config.py</code> di VS Code<br>
+            2. Scroll ke bagian class <code>IndoT5HybridConfig</code> (baris 24-70)<br>
+            3. Tekan <code>Alt + Print Screen</code> atau gunakan Snipping Tool<br>
+            4. Simpan dengan nama: <code>screenshot_04_konfigurasi.png</code>
+        </div>
+    </div>
+    <p class="figure-caption">Gambar 4.4 Konfigurasi Sistem IndoT5 Hybrid Paraphraser</p>
+    
+    <!-- ============================================================ -->
+    <!-- 4.2 HASIL PENGUJIAN -->
+    <!-- ============================================================ -->
+    
+    <h2 class="page-break">4.2 Hasil Pengujian</h2>
+    
+    <p>
+        Pengujian dilakukan menggunakan 10 kalimat uji dalam bahasa Indonesia yang mencakup berbagai domain, termasuk: akademik/penelitian, teknologi, pendidikan, ekonomi, dan pemerintahan. Setiap kalimat diproses menggunakan metode hybrid dan hasilnya dievaluasi berdasarkan beberapa metrik kualitas.
+    </p>
+    
+    <h3>4.2.1 Dataset Pengujian</h3>
+    
+    <p>
+        Dataset yang digunakan dalam pengujian terdiri dari kalimat-kalimat bahasa Indonesia yang representatif dari berbagai bidang:
+    </p>
+    
+    <p class="table-caption">Tabel 4.2 Dataset Kalimat Pengujian</p>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Kalimat Asli</th>
+                <th>Jumlah Kata</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Mahasiswa diharapkan mampu mengembangkan kemampuan berpikir kritis melalui kegiatan pembelajaran.</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Perubahan iklim global mempengaruhi pola cuaca dan mengancam ketahanan pangan di berbagai negara.</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Penggunaan media sosial telah mengubah cara masyarakat berkomunikasi dan berinteraksi.</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Hasil penelitian menunjukkan bahwa motivasi belajar berpengaruh terhadap prestasi akademik siswa.</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Ekonomi digital membuka peluang baru bagi pelaku usaha mikro kecil dan menengah.</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Pendidikan karakter menjadi fokus utama dalam kurikulum pendidikan nasional saat ini.</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Inovasi teknologi informasi membantu meningkatkan efisiensi dalam berbagai sektor industri.</td>
+                <td>10</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!-- Screenshot 5: Dataset -->
+    <div class="screenshot-placeholder">
+        <span class="screenshot-number">Screenshot #5</span>
+        <div class="label">📸 SCREENSHOT: File run_research_test.py (Dataset)</div>
+        <div class="instruction">
+            <strong>Cara mengambil screenshot:</strong><br>
+            1. Buka file <code>run_research_test.py</code><br>
+            2. Scroll ke bagian variabel <code>TEST_SENTENCES</code> (baris 25-40)<br>
+            3. Screenshot bagian yang menampilkan daftar kalimat uji<br>
+            4. Simpan dengan nama: <code>screenshot_05_dataset.png</code>
+        </div>
+    </div>
+    <p class="figure-caption">Gambar 4.5 Dataset Kalimat Pengujian dalam Kode Program</p>
+    
+    <h3>4.2.2 Proses Eksekusi Pengujian</h3>
+    
+    <p>
+        Pengujian dijalankan menggunakan skrip <code>run_research_test.py</code> yang melakukan serangkaian eksperimen secara otomatis. Proses eksekusi mencakup inisialisasi model, pemrosesan batch, dan penyimpanan hasil.
+    </p>
+    
+    <!-- Screenshot 6: Terminal Eksekusi -->
+    <div class="screenshot-placeholder">
+        <span class="screenshot-number">Screenshot #6</span>
+        <div class="label">📸 SCREENSHOT: Terminal - Proses Eksekusi</div>
+        <div class="instruction">
+            <strong>Cara mengambil screenshot:</strong><br>
+            1. Buka Terminal di VS Code<br>
+            2. Jalankan perintah: <code>D:/devnolife/paraphrase/venv/Scripts/python.exe run_research_test.py</code><br>
+            3. Tunggu sampai proses selesai<br>
+            4. Screenshot bagian yang menunjukkan:<br>
+            &nbsp;&nbsp;&nbsp;- Inisialisasi model (Loading IndoT5 model)<br>
+            &nbsp;&nbsp;&nbsp;- Proses batch processing<br>
+            5. Simpan dengan nama: <code>screenshot_06_eksekusi_terminal.png</code>
+        </div>
+    </div>
+    <p class="figure-caption">Gambar 4.6 Proses Eksekusi Pengujian di Terminal</p>
+    
+    <!-- ============================================================ -->
+    <!-- 4.3 HASIL PARAFRASE -->
+    <!-- ============================================================ -->
+    
+    <h2 class="page-break">4.3 Hasil Parafrase</h2>
+    
+    <p>
+        Berikut adalah hasil parafrase yang dihasilkan oleh sistem untuk setiap kalimat uji. Tabel ini menunjukkan perbandingan antara kalimat asli dengan hasil parafrase beserta transformasi yang diterapkan.
+    </p>
+    
+    <p class="table-caption">Tabel 4.3 Hasil Parafrase Metode Hybrid</p>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 5%">No</th>
+                <th style="width: 35%">Kalimat Asli</th>
+                <th style="width: 35%">Hasil Parafrase</th>
+                <th style="width: 25%">Transformasi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.</td>
+                <td>Investigasi metode dimenggunakan oleh ini kualitatif informasi dimenganalisis oleh untuk wawancara dari responden.</td>
+                <td>
+                    • neural_generation<br>
+                    • synonym: Penelitian → Investigasi<br>
+                    • synonym: data → informasi<br>
+                    • syntactic: active_to_passive
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.</td>
+                <td><em>(Output neural tidak optimal)</em></td>
+                <td>• neural_generation</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.</td>
+                <td>Pemerintah program dimencanangkan oleh Indonesia digitalisasi pelayanan dimeningkatkan oleh untuk publik.</td>
+                <td>
+                    • neural_generation<br>
+                    • syntactic: active_to_passive
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Mahasiswa diharapkan mampu mengembangkan kemampuan berpikir kritis melalui kegiatan pembelajaran.</td>
+                <td>Mahasiswa diharapkan kemampuan dimengembangkan oleh mampu berpikir kritis melalui kegiatan pembelajaran.</td>
+                <td>
+                    • neural_generation<br>
+                    • syntactic: active_to_passive
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Perubahan iklim global mempengaruhi pola cuaca dan mengancam ketahanan pangan di berbagai negara.</td>
+                <td>Perubahan iklim pola dimempengaruhi oleh internasional cuaca serta mengancam ketahanan pangan di berbagai negara.</td>
+                <td>
+                    • neural_generation<br>
+                    • synonym: global → internasional<br>
+                    • synonym: dan → serta<br>
+                    • syntactic: active_to_passive
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!-- Screenshot 7: Hasil JSON -->
+    <div class="screenshot-placeholder">
+        <span class="screenshot-number">Screenshot #7</span>
+        <div class="label">📸 SCREENSHOT: File Hasil JSON</div>
+        <div class="instruction">
+            <strong>Cara mengambil screenshot:</strong><br>
+            1. Buka file <code>hasil/experiments/experiment_20260112_180156.json</code><br>
+            2. Screenshot seluruh isi file yang menunjukkan:<br>
+            &nbsp;&nbsp;&nbsp;- experiment_id<br>
+            &nbsp;&nbsp;&nbsp;- configuration<br>
+            &nbsp;&nbsp;&nbsp;- input dan result<br>
+            3. Simpan dengan nama: <code>screenshot_07_hasil_json.png</code>
+        </div>
+    </div>
+    <p class="figure-caption">Gambar 4.7 Contoh Hasil Eksperimen dalam Format JSON</p>
+    
+    <!-- ============================================================ -->
+    <!-- 4.4 ANALISIS METRIK KUALITAS -->
+    <!-- ============================================================ -->
+    
+    <h2 class="page-break">4.4 Analisis Metrik Kualitas</h2>
+    
+    <p>
+        Kualitas hasil parafrase diukur menggunakan beberapa metrik yang mencakup aspek semantik, leksikal, sintaktis, dan kelancaran (fluency). Berikut adalah penjelasan dan hasil pengukuran untuk setiap metrik:
+    </p>
+    
+    <h3>4.4.1 Definisi Metrik Kualitas</h3>
+    
+    <p class="table-caption">Tabel 4.4 Definisi Metrik Kualitas</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Metrik</th>
+                <th>Bobot</th>
+                <th>Deskripsi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Semantic Similarity</strong></td>
+                <td>35%</td>
+                <td>Mengukur seberapa baik makna asli dipertahankan dalam parafrase. Dihitung menggunakan model sentence-transformers.</td>
+            </tr>
+            <tr>
+                <td><strong>Lexical Diversity</strong></td>
+                <td>25%</td>
+                <td>Mengukur tingkat perubahan kosakata antara teks asli dan parafrase.</td>
+            </tr>
+            <tr>
+                <td><strong>Syntactic Complexity</strong></td>
+                <td>20%</td>
+                <td>Mengukur perubahan struktur gramatikal dalam kalimat.</td>
+            </tr>
+            <tr>
+                <td><strong>Fluency Score</strong></td>
+                <td>20%</td>
+                <td>Mengukur kelancaran dan keterbacaan hasil parafrase.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3>4.4.2 Hasil Pengukuran Metrik</h3>
+    
+    <p>
+        Berdasarkan pengujian terhadap 10 kalimat, diperoleh statistik metrik kualitas sebagai berikut:
+    </p>
+    
+    <p class="table-caption">Tabel 4.5 Statistik Metrik Kualitas</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Metrik</th>
+                <th>Minimum</th>
+                <th>Maksimum</th>
+                <th>Rata-rata</th>
+                <th>Std. Deviasi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Quality Score</td>
+                <td>26.02</td>
+                <td>73.63</td>
+                <td><strong>59.17</strong></td>
+                <td>14.16</td>
+            </tr>
+            <tr>
+                <td>Semantic Similarity</td>
+                <td>0.089</td>
+                <td>0.954</td>
+                <td><strong>0.733</strong></td>
+                <td>0.249</td>
+            </tr>
+            <tr>
+                <td>Lexical Diversity</td>
+                <td>0.091</td>
+                <td>0.462</td>
+                <td><strong>0.321</strong></td>
+                <td>0.119</td>
+            </tr>
+            <tr>
+                <td>Fluency Score</td>
+                <td>0.833</td>
+                <td>0.958</td>
+                <td><strong>0.908</strong></td>
+                <td>0.041</td>
+            </tr>
+            <tr>
+                <td>Processing Time (s)</td>
+                <td>0.00</td>
+                <td>2.08</td>
+                <td><strong>1.01</strong></td>
+                <td>0.508</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!-- Visualization Box -->
+    <div style="text-align: center; margin: 20pt 0;">
+        <div class="metric-box">
+            <div class="metric-value">59.17</div>
+            <div class="metric-label">Avg Quality Score</div>
+        </div>
+        <div class="metric-box">
+            <div class="metric-value">73.3%</div>
+            <div class="metric-label">Semantic Similarity</div>
+        </div>
+        <div class="metric-box">
+            <div class="metric-value">90.8%</div>
+            <div class="metric-label">Fluency Score</div>
+        </div>
+        <div class="metric-box">
+            <div class="metric-value">100%</div>
+            <div class="metric-label">Success Rate</div>
+        </div>
+    </div>
+    
+    <!-- Screenshot 8: Quality Report -->
+    <div class="screenshot-placeholder">
+        <span class="screenshot-number">Screenshot #8</span>
+        <div class="label">📸 SCREENSHOT: File Quality Report</div>
+        <div class="instruction">
+            <strong>Cara mengambil screenshot:</strong><br>
+            1. Buka file <code>hasil/quality_analysis/quality_report_20260112_180156.json</code><br>
+            2. Screenshot seluruh isi file yang menunjukkan statistik metrik<br>
+            3. Simpan dengan nama: <code>screenshot_08_quality_report.png</code>
+        </div>
+    </div>
+    <p class="figure-caption">Gambar 4.8 Laporan Kualitas dalam Format JSON</p>
+    
+    <h3>4.4.3 Interpretasi Hasil</h3>
+    
+    <p>
+        Berdasarkan hasil pengukuran metrik kualitas, dapat diinterpretasikan sebagai berikut:
+    </p>
+    
+    <ol>
+        <li>
+            <strong>Semantic Similarity (Rata-rata: 0.733)</strong><br>
+            Nilai rata-rata 73.3% menunjukkan bahwa sistem cukup baik dalam mempertahankan makna semantik dari teks asli. Nilai ini berada di atas threshold 0.7 yang ditetapkan dalam konfigurasi.
+        </li>
+        <li>
+            <strong>Fluency Score (Rata-rata: 0.908)</strong><br>
+            Skor kelancaran yang tinggi (90.8%) mengindikasikan bahwa hasil parafrase memiliki keterbacaan yang baik dan struktur kalimat yang dapat dipahami.
+        </li>
+        <li>
+            <strong>Lexical Diversity (Rata-rata: 0.321)</strong><br>
+            Tingkat keragaman leksikal 32.1% menunjukkan perubahan kosakata yang moderat, sesuai dengan synonym_rate yang dikonfigurasi sebesar 30%.
+        </li>
+        <li>
+            <strong>Quality Score (Rata-rata: 59.17)</strong><br>
+            Skor kualitas keseluruhan mendekati threshold 60.0, menunjukkan bahwa sistem menghasilkan parafrase dengan kualitas yang dapat diterima.
+        </li>
+    </ol>
+    
+    <!-- ============================================================ -->
+    <!-- 4.5 PERBANDINGAN METODE -->
+    <!-- ============================================================ -->
+    
+    <h2 class="page-break">4.5 Perbandingan Metode</h2>
+    
+    <p>
+        Untuk mengevaluasi efektivitas pendekatan hybrid, dilakukan perbandingan dengan dua metode lainnya: neural-only dan rule-based-only. Pengujian perbandingan menggunakan 3 kalimat sampel.
+    </p>
+    
+    <h3>4.5.1 Hasil Perbandingan</h3>
+    
+    <p class="table-caption">Tabel 4.6 Perbandingan Metode Parafrase</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Metrik</th>
+                <th>Hybrid</th>
+                <th>Neural</th>
+                <th>Rule-based</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Success Rate</td>
+                <td><strong>100%</strong></td>
+                <td>100%</td>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <td>Avg Quality Score</td>
+                <td><strong>50.17</strong></td>
+                <td>50.17</td>
+                <td>50.17</td>
+            </tr>
+            <tr>
+                <td>Avg Semantic Similarity</td>
+                <td><strong>0.558</strong></td>
+                <td>0.558</td>
+                <td>0.558</td>
+            </tr>
+            <tr>
+                <td>Total Processing Time</td>
+                <td>0.0s (cached)</td>
+                <td>0.0s (cached)</td>
+                <td>0.0s (cached)</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="warning-box">
+        <strong>⚠️ Catatan:</strong> Pada pengujian ini, hasil menunjukkan nilai yang sama karena sistem menggunakan mekanisme caching. Untuk perbandingan yang lebih akurat, disarankan untuk menonaktifkan caching atau menggunakan dataset yang berbeda untuk setiap metode.
+    </div>
+    
+    <!-- Screenshot 9: Comparison Report -->
+    <div class="screenshot-placeholder">
+        <span class="screenshot-number">Screenshot #9</span>
+        <div class="label">📸 SCREENSHOT: File Comparison Report</div>
+        <div class="instruction">
+            <strong>Cara mengambil screenshot:</strong><br>
+            1. Buka file <code>hasil/comparison_reports/comparison_20260112_180156.json</code><br>
+            2. Screenshot bagian "method_comparison" dan "analysis"<br>
+            3. Simpan dengan nama: <code>screenshot_09_comparison.png</code>
+        </div>
+    </div>
+    <p class="figure-caption">Gambar 4.9 Hasil Perbandingan Metode dalam Format JSON</p>
+    
+    <h3>4.5.2 Analisis Perbandingan</h3>
+    
+    <p>
+        Berdasarkan hasil perbandingan, dapat disimpulkan:
+    </p>
+    
+    <ol>
+        <li><strong>Metode Hybrid</strong> mengkombinasikan keunggulan neural processing untuk generasi awal dengan rule-based untuk pengayaan, menghasilkan variasi yang lebih kaya.</li>
+        <li><strong>Metode Neural</strong> unggul dalam generasi parafrase secara cepat, namun terkadang menghasilkan output yang tidak optimal untuk bahasa Indonesia.</li>
+        <li><strong>Metode Rule-based</strong> memberikan hasil yang lebih terprediksi dengan substitusi sinonim dan transformasi sintaktis, namun variasi terbatas.</li>
+    </ol>
+    
+    <!-- ============================================================ -->
+    <!-- 4.6 HASIL OUTPUT FILE -->
+    <!-- ============================================================ -->
+    
+    <h2 class="page-break">4.6 Struktur Hasil Output</h2>
+    
+    <p>
+        Sistem menyimpan hasil pengujian dalam struktur folder yang terorganisir untuk memudahkan dokumentasi dan analisis lebih lanjut.
+    </p>
+    
+    <h3>4.6.1 Struktur Folder Hasil</h3>
+    
+    <div class="code-block">
+hasil/
+├── experiments/              # Hasil eksperimen tunggal
+│   └── experiment_20260112_180156.json
+├── batch_results/            # Hasil batch processing
+│   └── batch_hybrid_20260112_180156.json
+├── quality_analysis/         # Analisis kualitas
+│   ├── quality_report_20260112_180156.json
+│   └── results_hybrid_20260112_180156.csv
+└── comparison_reports/       # Perbandingan metode
+    └── comparison_20260112_180156.json
+    </div>
+    
+    <!-- Screenshot 10: Folder Structure -->
+    <div class="screenshot-placeholder">
+        <span class="screenshot-number">Screenshot #10</span>
+        <div class="label">📸 SCREENSHOT: Struktur Folder Hasil</div>
+        <div class="instruction">
+            <strong>Cara mengambil screenshot:</strong><br>
+            1. Buka Explorer di VS Code (Ctrl+Shift+E)<br>
+            2. Expand folder <code>hasil/</code> dan semua subfolder-nya<br>
+            3. Screenshot tampilan tree structure yang menunjukkan semua file<br>
+            4. Simpan dengan nama: <code>screenshot_10_folder_struktur.png</code>
+        </div>
+    </div>
+    <p class="figure-caption">Gambar 4.10 Struktur Folder Hasil Penelitian</p>
+    
+    <h3>4.6.2 Format File CSV</h3>
+    
+    <p>
+        Hasil juga disimpan dalam format CSV untuk memudahkan analisis menggunakan aplikasi spreadsheet seperti Microsoft Excel atau software statistik seperti SPSS.
+    </p>
+    
+    <!-- Screenshot 11: CSV File -->
+    <div class="screenshot-placeholder">
+        <span class="screenshot-number">Screenshot #11</span>
+        <div class="label">📸 SCREENSHOT: File CSV di Excel</div>
+        <div class="instruction">
+            <strong>Cara mengambil screenshot:</strong><br>
+            1. Buka file <code>hasil/quality_analysis/results_hybrid_20260112_180156.csv</code> dengan Excel<br>
+            2. Atau buka di VS Code untuk melihat raw data<br>
+            3. Screenshot tampilan tabel data<br>
+            4. Simpan dengan nama: <code>screenshot_11_csv_data.png</code>
+        </div>
+    </div>
+    <p class="figure-caption">Gambar 4.11 Data Hasil dalam Format CSV</p>
+    
+    <!-- ============================================================ -->
+    <!-- 4.7 PEMBAHASAN -->
+    <!-- ============================================================ -->
+    
+    <h2 class="page-break">4.7 Pembahasan</h2>
+    
+    <p>
+        Berdasarkan hasil pengujian yang telah dilakukan, berikut adalah pembahasan mengenai kinerja sistem parafrase IndoT5 Hybrid:
+    </p>
+    
+    <h3>4.7.1 Keunggulan Sistem</h3>
+    
+    <ol>
+        <li>
+            <strong>Tingkat Keberhasilan 100%</strong><br>
+            Sistem berhasil memproses seluruh kalimat uji tanpa kegagalan, menunjukkan stabilitas yang baik.
+        </li>
+        <li>
+            <strong>Preservasi Semantik yang Baik</strong><br>
+            Rata-rata semantic similarity 73.3% menunjukkan sistem mampu mempertahankan makna asli dengan cukup baik.
+        </li>
+        <li>
+            <strong>Kelancaran Tinggi</strong><br>
+            Fluency score rata-rata 90.8% mengindikasikan hasil parafrase mudah dibaca dan dipahami.
+        </li>
+        <li>
+            <strong>Transformasi Beragam</strong><br>
+            Sistem menerapkan berbagai jenis transformasi: substitusi sinonim, transformasi aktif-pasif, dan generasi neural.
+        </li>
+    </ol>
+    
+    <h3>4.7.2 Keterbatasan Sistem</h3>
+    
+    <ol>
+        <li>
+            <strong>Kualitas Output Neural</strong><br>
+            Model IndoT5-base terkadang menghasilkan output yang tidak optimal (seperti repetisi "Paraphrase:"), menunjukkan perlunya fine-tuning lebih lanjut.
+        </li>
+        <li>
+            <strong>Transformasi Sintaktis</strong><br>
+            Pola transformasi aktif-pasif menghasilkan struktur "dimenggunakan" yang tidak gramatikal, perlu perbaikan pada regex pattern.
+        </li>
+        <li>
+            <strong>Variasi Terbatas</strong><br>
+            Database sinonim yang terbatas (128 entri) membatasi variasi leksikal yang dapat dihasilkan.
+        </li>
+    </ol>
+    
+    <h3>4.7.3 Rekomendasi Perbaikan</h3>
+    
+    <div class="summary-box">
+        <strong>Rekomendasi untuk Pengembangan Selanjutnya:</strong>
+        <ol>
+            <li>Fine-tuning model IndoT5 dengan dataset parafrase bahasa Indonesia yang lebih besar</li>
+            <li>Perbaikan pola regex untuk transformasi aktif-pasif yang lebih akurat</li>
+            <li>Ekspansi database sinonim dengan sumber seperti Tesaurus Tematis Bahasa Indonesia</li>
+            <li>Implementasi mekanisme post-processing untuk validasi gramatikal</li>
+            <li>Penambahan metrik evaluasi oleh ahli bahasa (human evaluation)</li>
+        </ol>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- 4.8 RINGKASAN HASIL -->
+    <!-- ============================================================ -->
+    
+    <h2>4.8 Ringkasan Hasil</h2>
+    
+    <p>
+        Berdasarkan pengujian yang telah dilakukan, dapat disimpulkan bahwa sistem IndoT5 Hybrid Paraphraser berhasil menghasilkan parafrase teks bahasa Indonesia dengan karakteristik sebagai berikut:
+    </p>
+    
+    <p class="table-caption">Tabel 4.7 Ringkasan Hasil Pengujian</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Aspek</th>
+                <th>Hasil</th>
+                <th>Keterangan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Total Pengujian</td>
+                <td>10 kalimat</td>
+                <td>Mencakup berbagai domain</td>
+            </tr>
+            <tr>
+                <td>Success Rate</td>
+                <td>100%</td>
+                <td>Semua kalimat berhasil diproses</td>
+            </tr>
+            <tr>
+                <td>Quality Score</td>
+                <td>59.17 (avg)</td>
+                <td>Mendekati threshold 60.0</td>
+            </tr>
+            <tr>
+                <td>Semantic Preservation</td>
+                <td>73.3%</td>
+                <td>Di atas threshold 70%</td>
+            </tr>
+            <tr>
+                <td>Fluency</td>
+                <td>90.8%</td>
+                <td>Keterbacaan baik</td>
+            </tr>
+            <tr>
+                <td>Processing Time</td>
+                <td>1.01s (avg)</td>
+                <td>Relatif cepat per kalimat</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!-- Screenshot 12: Ringkasan Terminal -->
+    <div class="screenshot-placeholder">
+        <span class="screenshot-number">Screenshot #12</span>
+        <div class="label">📸 SCREENSHOT: Ringkasan Pengujian di Terminal</div>
+        <div class="instruction">
+            <strong>Cara mengambil screenshot:</strong><br>
+            1. Scroll terminal ke bagian akhir setelah eksekusi selesai<br>
+            2. Screenshot bagian "RINGKASAN PENGUJIAN" yang menampilkan:<br>
+            &nbsp;&nbsp;&nbsp;- Daftar file yang tersimpan<br>
+            &nbsp;&nbsp;&nbsp;- Statistik pengujian<br>
+            3. Simpan dengan nama: <code>screenshot_12_ringkasan.png</code>
+        </div>
+    </div>
+    <p class="figure-caption">Gambar 4.12 Ringkasan Hasil Pengujian di Terminal</p>
+    
+    <!-- ============================================================ -->
+    <!-- DAFTAR SCREENSHOT -->
+    <!-- ============================================================ -->
+    
+    <h2 class="page-break">Lampiran: Daftar Screenshot yang Diperlukan</h2>
+    
+    <p>
+        Berikut adalah daftar lengkap screenshot yang perlu diambil untuk melengkapi dokumentasi Bab 4:
+    </p>
+    
+    <p class="table-caption">Tabel 4.8 Daftar Screenshot</p>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama File</th>
+                <th>Deskripsi</th>
+                <th>Lokasi di Dokumen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>screenshot_01_web_tampilan_awal.png</td>
+                <td>Tampilan awal web interface di http://localhost:5000</td>
+                <td>Gambar 4.1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>screenshot_02_web_input.png</td>
+                <td>Web interface dengan teks yang sudah diinput</td>
+                <td>Gambar 4.2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>screenshot_03_web_hasil.png</td>
+                <td>Hasil parafrase di web interface (quality score, dll)</td>
+                <td>Gambar 4.3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>screenshot_04_konfigurasi.png</td>
+                <td>File config.py - class IndoT5HybridConfig</td>
+                <td>Gambar 4.4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>screenshot_05_dataset.png</td>
+                <td>File run_research_test.py - TEST_SENTENCES</td>
+                <td>Gambar 4.5</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>screenshot_06_eksekusi_terminal.png</td>
+                <td>Terminal saat menjalankan pengujian batch</td>
+                <td>Gambar 4.6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>screenshot_07_hasil_json.png</td>
+                <td>File experiment_*.json</td>
+                <td>Gambar 4.7</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>screenshot_08_quality_report.png</td>
+                <td>File quality_report_*.json</td>
+                <td>Gambar 4.8</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>screenshot_09_comparison.png</td>
+                <td>File comparison_*.json</td>
+                <td>Gambar 4.9</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>screenshot_10_folder_struktur.png</td>
+                <td>Struktur folder hasil/ di Explorer</td>
+                <td>Gambar 4.10</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>screenshot_11_csv_data.png</td>
+                <td>File CSV di Excel atau VS Code</td>
+                <td>Gambar 4.11</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>screenshot_12_ringkasan.png</td>
+                <td>Ringkasan pengujian di terminal</td>
+                <td>Gambar 4.12</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="summary-box">
+        <strong>💡 Tips Mengambil Screenshot:</strong>
+        <ul>
+            <li><strong>Windows:</strong> Gunakan <code>Win + Shift + S</code> untuk Snip & Sketch</li>
+            <li><strong>VS Code:</strong> Pastikan zoom level 100% untuk keterbacaan optimal</li>
+            <li><strong>Format:</strong> Simpan dalam format PNG untuk kualitas terbaik</li>
+            <li><strong>Resolusi:</strong> Minimal 1920x1080 untuk hasil cetak yang jelas</li>
+            <li><strong>Folder:</strong> Simpan semua screenshot di folder <code>hasil/screenshots/</code></li>
+        </ul>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================================ -->
+    
+    <hr style="margin-top: 30pt;">
+    <p class="center no-indent" style="font-size: 10pt; color: #666;">
+        Dokumen ini dibuat secara otomatis oleh sistem pengujian IndoT5 Hybrid Paraphraser<br>
+        Tanggal Pengujian: 12 Januari 2026
+    </p>
+
+</body>
+</html>

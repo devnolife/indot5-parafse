@@ -1,0 +1,409 @@
+{
+  "batch_id": "BATCH-20260112_180157",
+  "timestamp": "2026-01-12T18:02:07.631846",
+  "configuration": {
+    "model_name": "Wikidepia/IndoT5-base",
+    "method": "hybrid",
+    "synonym_rate": 0.3,
+    "quality_threshold": 60.0
+  },
+  "summary": {
+    "total_sentences": 10,
+    "success_count": 10,
+    "success_rate": 100.0,
+    "average_quality_score": 59.17,
+    "average_semantic_similarity": 0.733,
+    "total_processing_time": 10.12,
+    "average_processing_time": 1.01
+  },
+  "results": [
+    {
+      "experiment_id": "EXP-20260112_180157",
+      "timestamp": "2026-01-12T18:01:57.508515",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+        "word_count": 11
+      },
+      "result": {
+        "original_text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+        "paraphrased_text": "Investigasi metode dimenggunakan oleh ini kualitatif informasi dimenganalisis oleh untuk wawancara dari responden.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "neural_generation",
+          "synonym: Penelitian -> Investigasi",
+          "synonym: data -> informasi",
+          "syntactic: active_to_passive"
+        ],
+        "quality_score": 60.15999984741211,
+        "confidence_score": 1.0,
+        "neural_confidence": 0.4909,
+        "semantic_similarity": 0.6843000054359436,
+        "lexical_diversity": 0.4545,
+        "syntactic_complexity": 0.3333,
+        "fluency_score": 0.9091,
+        "processing_time": 0.0,
+        "word_changes": 2,
+        "syntax_changes": 1,
+        "success": true,
+        "error_message": null,
+        "alternatives": []
+      },
+      "total_processing_time": 0.0
+    },
+    {
+      "experiment_id": "EXP-20260112_180157",
+      "timestamp": "2026-01-12T18:01:59.585506",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.",
+        "word_count": 12
+      },
+      "result": {
+        "original_text": "Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.",
+        "paraphrased_text": ":ity: Paraphrase: Paraphrase: Paraphrase: Paraphrase: Paraphrase: Paraphrasean paraphrase:",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "neural_generation"
+        ],
+        "quality_score": 26.020000457763672,
+        "confidence_score": 0.9934999942779541,
+        "neural_confidence": 0.7333,
+        "semantic_similarity": 0.08860000222921371,
+        "lexical_diversity": 0.25,
+        "syntactic_complexity": 0.0,
+        "fluency_score": 0.8333,
+        "processing_time": 2.0765,
+        "word_changes": 0,
+        "syntax_changes": 0,
+        "success": true,
+        "error_message": null,
+        "alternatives": []
+      },
+      "total_processing_time": 2.0765
+    },
+    {
+      "experiment_id": "EXP-20260112_180159",
+      "timestamp": "2026-01-12T18:02:00.753125",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.",
+        "word_count": 9
+      },
+      "result": {
+        "original_text": "Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.",
+        "paraphrased_text": "Pemerintah program dimencanangkan oleh Indonesia digitalisasi pelayanan dimeningkatkan oleh untuk publik.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "neural_generation",
+          "syntactic: active_to_passive"
+        ],
+        "quality_score": 64.33999633789062,
+        "confidence_score": 1.0,
+        "neural_confidence": 0.5556,
+        "semantic_similarity": 0.9017999768257141,
+        "lexical_diversity": 0.3333,
+        "syntactic_complexity": 0.3333,
+        "fluency_score": 0.8889,
+        "processing_time": 1.1671,
+        "word_changes": 0,
+        "syntax_changes": 1,
+        "success": true,
+        "error_message": null,
+        "alternatives": []
+      },
+      "total_processing_time": 1.1671
+    },
+    {
+      "experiment_id": "EXP-20260112_180200",
+      "timestamp": "2026-01-12T18:02:01.774078",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Mahasiswa diharapkan mampu mengembangkan kemampuan berpikir kritis melalui kegiatan pembelajaran.",
+        "word_count": 10
+      },
+      "result": {
+        "original_text": "Mahasiswa diharapkan mampu mengembangkan kemampuan berpikir kritis melalui kegiatan pembelajaran.",
+        "paraphrased_text": "Mahasiswa diharapkan kemampuan dimengembangkan oleh mampu berpikir kegiatan dimelalui oleh kritis pembelajaran.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "neural_generation",
+          "syntactic: active_to_passive"
+        ],
+        "quality_score": 60.56999969482422,
+        "confidence_score": 0.9656999707221985,
+        "neural_confidence": 0.36,
+        "semantic_similarity": 0.8116000294685364,
+        "lexical_diversity": 0.3,
+        "syntactic_complexity": 0.3333,
+        "fluency_score": 0.9,
+        "processing_time": 1.0203,
+        "word_changes": 0,
+        "syntax_changes": 1,
+        "success": true,
+        "error_message": null,
+        "alternatives": []
+      },
+      "total_processing_time": 1.0203
+    },
+    {
+      "experiment_id": "EXP-20260112_180201",
+      "timestamp": "2026-01-12T18:02:02.779270",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Perubahan iklim global mempengaruhi pola cuaca dan mengancam ketahanan pangan di berbagai negara.",
+        "word_count": 13
+      },
+      "result": {
+        "original_text": "Perubahan iklim global mempengaruhi pola cuaca dan mengancam ketahanan pangan di berbagai negara.",
+        "paraphrased_text": "Perubahan iklim pola dimempengaruhi oleh internasional cuaca ketahanan dimengancam oleh ditambah pangan di berbagai bangsa.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "neural_generation",
+          "synonym: global -> internasional",
+          "synonym: negara. -> bangsa.",
+          "syntactic: active_to_passive",
+          "syntactic: conjunction_substitution (dan -> ditambah)"
+        ],
+        "quality_score": 70.27999877929688,
+        "confidence_score": 1.0,
+        "neural_confidence": 0.6923,
+        "semantic_similarity": 0.7699000239372253,
+        "lexical_diversity": 0.4615,
+        "syntactic_complexity": 0.6667,
+        "fluency_score": 0.9231,
+        "processing_time": 1.0045,
+        "word_changes": 2,
+        "syntax_changes": 2,
+        "success": true,
+        "error_message": null,
+        "alternatives": []
+      },
+      "total_processing_time": 1.0045
+    },
+    {
+      "experiment_id": "EXP-20260112_180202",
+      "timestamp": "2026-01-12T18:02:03.703979",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Penggunaan media sosial telah mengubah cara masyarakat berkomunikasi dan berinteraksi.",
+        "word_count": 10
+      },
+      "result": {
+        "original_text": "Penggunaan media sosial telah mengubah cara masyarakat berkomunikasi dan berinteraksi.",
+        "paraphrased_text": "sosial dimedia oleh Penggunaan cara dimengubah oleh telah masyarakat berkomunikasi serta berinteraksi.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "neural_generation",
+          "syntactic: active_to_passive",
+          "syntactic: conjunction_substitution (dan -> serta)"
+        ],
+        "quality_score": 64.79000091552734,
+        "confidence_score": 1.0,
+        "neural_confidence": 0.44,
+        "semantic_similarity": 0.6703000068664551,
+        "lexical_diversity": 0.4,
+        "syntactic_complexity": 0.6667,
+        "fluency_score": 0.9,
+        "processing_time": 0.9241,
+        "word_changes": 0,
+        "syntax_changes": 2,
+        "success": true,
+        "error_message": null,
+        "alternatives": []
+      },
+      "total_processing_time": 0.9242
+    },
+    {
+      "experiment_id": "EXP-20260112_180203",
+      "timestamp": "2026-01-12T18:02:04.777693",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Hasil penelitian menunjukkan bahwa motivasi belajar berpengaruh terhadap prestasi akademik siswa.",
+        "word_count": 11
+      },
+      "result": {
+        "original_text": "Hasil penelitian menunjukkan bahwa motivasi belajar berpengaruh terhadap prestasi akademik siswa.",
+        "paraphrased_text": "paraphrase: belajar berpengaruh terhadap prestasi akademik siswa. Paraphrase:",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "neural_generation"
+        ],
+        "quality_score": 43.130001068115234,
+        "confidence_score": 1.0,
+        "neural_confidence": 0.7818,
+        "semantic_similarity": 0.673799991607666,
+        "lexical_diversity": 0.0909,
+        "syntactic_complexity": 0.0,
+        "fluency_score": 0.8636,
+        "processing_time": 1.0732,
+        "word_changes": 0,
+        "syntax_changes": 0,
+        "success": true,
+        "error_message": null,
+        "alternatives": []
+      },
+      "total_processing_time": 1.0732
+    },
+    {
+      "experiment_id": "EXP-20260112_180204",
+      "timestamp": "2026-01-12T18:02:05.994011",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Ekonomi digital membuka peluang baru bagi pelaku usaha mikro kecil dan menengah.",
+        "word_count": 12
+      },
+      "result": {
+        "original_text": "Ekonomi digital membuka peluang baru bagi pelaku usaha mikro kecil dan menengah.",
+        "paraphrased_text": "Perdagangan peluang dimembuka oleh digital mutakhir bagi pelaku usaha mikro kecil ditambah menengah.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "neural_generation",
+          "synonym: Ekonomi -> Perdagangan",
+          "synonym: baru -> mutakhir",
+          "syntactic: conjunction_substitution (dan -> ditambah)",
+          "syntactic: active_to_passive"
+        ],
+        "quality_score": 73.62999725341797,
+        "confidence_score": 1.0,
+        "neural_confidence": 0.5333,
+        "semantic_similarity": 0.8776000142097473,
+        "lexical_diversity": 0.4167,
+        "syntactic_complexity": 0.6667,
+        "fluency_score": 0.9583,
+        "processing_time": 1.2157,
+        "word_changes": 2,
+        "syntax_changes": 2,
+        "success": true,
+        "error_message": null,
+        "alternatives": []
+      },
+      "total_processing_time": 1.2158
+    },
+    {
+      "experiment_id": "EXP-20260112_180205",
+      "timestamp": "2026-01-12T18:02:06.735332",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Pendidikan karakter menjadi fokus utama dalam kurikulum pendidikan nasional saat ini.",
+        "word_count": 11
+      },
+      "result": {
+        "original_text": "Pendidikan karakter menjadi fokus utama dalam kurikulum pendidikan nasional saat ini.",
+        "paraphrased_text": "Akademik fokus dimenjadi oleh karakter utama dalam kurikulum pendidikan nasional saat ini.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "neural_generation",
+          "synonym: Pendidikan -> Akademik",
+          "syntactic: active_to_passive"
+        ],
+        "quality_score": 64.69999694824219,
+        "confidence_score": 1.0,
+        "neural_confidence": 0.4182,
+        "semantic_similarity": 0.8984000086784363,
+        "lexical_diversity": 0.3,
+        "syntactic_complexity": 0.3333,
+        "fluency_score": 0.9545,
+        "processing_time": 0.7408,
+        "word_changes": 1,
+        "syntax_changes": 1,
+        "success": true,
+        "error_message": null,
+        "alternatives": []
+      },
+      "total_processing_time": 0.7408
+    },
+    {
+      "experiment_id": "EXP-20260112_180206",
+      "timestamp": "2026-01-12T18:02:07.631485",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Inovasi teknologi informasi membantu meningkatkan efisiensi dalam berbagai sektor industri.",
+        "word_count": 10
+      },
+      "result": {
+        "original_text": "Inovasi teknologi informasi membantu meningkatkan efisiensi dalam berbagai sektor industri.",
+        "paraphrased_text": "Inovasi teknologi meningkatkan dimembantu oleh informasi efisiensi dalam berbagai sektor industri.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "neural_generation",
+          "syntactic: active_to_passive"
+        ],
+        "quality_score": 64.05000305175781,
+        "confidence_score": 0.9204999804496765,
+        "neural_confidence": 0.28,
+        "semantic_similarity": 0.9538999795913696,
+        "lexical_diversity": 0.2,
+        "syntactic_complexity": 0.3333,
+        "fluency_score": 0.95,
+        "processing_time": 0.8956,
+        "word_changes": 0,
+        "syntax_changes": 1,
+        "success": true,
+        "error_message": null,
+        "alternatives": []
+      },
+      "total_processing_time": 0.8956
+    }
+  ]
+}

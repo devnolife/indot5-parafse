@@ -1,0 +1,391 @@
+{
+  "batch_id": "BATCH-20260112_175539",
+  "timestamp": "2026-01-12T17:55:50.013215",
+  "configuration": {
+    "model_name": "Wikidepia/IndoT5-base",
+    "method": "hybrid",
+    "synonym_rate": 0.3,
+    "quality_threshold": 60.0
+  },
+  "summary": {
+    "total_sentences": 10,
+    "success_count": 0,
+    "success_rate": 0.0,
+    "average_quality_score": 0,
+    "average_semantic_similarity": 0,
+    "total_processing_time": 10.97,
+    "average_processing_time": 1.1
+  },
+  "results": [
+    {
+      "experiment_id": "EXP-20260112_175539",
+      "timestamp": "2026-01-12T17:55:40.036891",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+        "word_count": 11
+      },
+      "result": {
+        "original_text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+        "paraphrased_text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "Error: Processing failed"
+        ],
+        "quality_score": 0.0,
+        "confidence_score": 0.0,
+        "neural_confidence": 0.0,
+        "semantic_similarity": 0.0,
+        "lexical_diversity": 0.0,
+        "syntactic_complexity": 0.0,
+        "fluency_score": 0.0,
+        "processing_time": 1.002,
+        "word_changes": 0,
+        "syntax_changes": 0,
+        "success": false,
+        "error_message": "string indices must be integers, not 'str'",
+        "alternatives": []
+      },
+      "total_processing_time": 1.0021
+    },
+    {
+      "experiment_id": "EXP-20260112_175540",
+      "timestamp": "2026-01-12T17:55:42.581633",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.",
+        "word_count": 12
+      },
+      "result": {
+        "original_text": "Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.",
+        "paraphrased_text": "Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "Error: Processing failed"
+        ],
+        "quality_score": 0.0,
+        "confidence_score": 0.0,
+        "neural_confidence": 0.0,
+        "semantic_similarity": 0.0,
+        "lexical_diversity": 0.0,
+        "syntactic_complexity": 0.0,
+        "fluency_score": 0.0,
+        "processing_time": 2.5443,
+        "word_changes": 0,
+        "syntax_changes": 0,
+        "success": false,
+        "error_message": "'list' object has no attribute 'get'",
+        "alternatives": []
+      },
+      "total_processing_time": 2.5443
+    },
+    {
+      "experiment_id": "EXP-20260112_175542",
+      "timestamp": "2026-01-12T17:55:43.563988",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.",
+        "word_count": 9
+      },
+      "result": {
+        "original_text": "Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.",
+        "paraphrased_text": "Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "Error: Processing failed"
+        ],
+        "quality_score": 0.0,
+        "confidence_score": 0.0,
+        "neural_confidence": 0.0,
+        "semantic_similarity": 0.0,
+        "lexical_diversity": 0.0,
+        "syntactic_complexity": 0.0,
+        "fluency_score": 0.0,
+        "processing_time": 0.9819,
+        "word_changes": 0,
+        "syntax_changes": 0,
+        "success": false,
+        "error_message": "string indices must be integers, not 'str'",
+        "alternatives": []
+      },
+      "total_processing_time": 0.982
+    },
+    {
+      "experiment_id": "EXP-20260112_175543",
+      "timestamp": "2026-01-12T17:55:44.425859",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Mahasiswa diharapkan mampu mengembangkan kemampuan berpikir kritis melalui kegiatan pembelajaran.",
+        "word_count": 10
+      },
+      "result": {
+        "original_text": "Mahasiswa diharapkan mampu mengembangkan kemampuan berpikir kritis melalui kegiatan pembelajaran.",
+        "paraphrased_text": "Mahasiswa diharapkan mampu mengembangkan kemampuan berpikir kritis melalui kegiatan pembelajaran.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "Error: Processing failed"
+        ],
+        "quality_score": 0.0,
+        "confidence_score": 0.0,
+        "neural_confidence": 0.0,
+        "semantic_similarity": 0.0,
+        "lexical_diversity": 0.0,
+        "syntactic_complexity": 0.0,
+        "fluency_score": 0.0,
+        "processing_time": 0.8614,
+        "word_changes": 0,
+        "syntax_changes": 0,
+        "success": false,
+        "error_message": "string indices must be integers, not 'str'",
+        "alternatives": []
+      },
+      "total_processing_time": 0.8614
+    },
+    {
+      "experiment_id": "EXP-20260112_175544",
+      "timestamp": "2026-01-12T17:55:45.431063",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Perubahan iklim global mempengaruhi pola cuaca dan mengancam ketahanan pangan di berbagai negara.",
+        "word_count": 13
+      },
+      "result": {
+        "original_text": "Perubahan iklim global mempengaruhi pola cuaca dan mengancam ketahanan pangan di berbagai negara.",
+        "paraphrased_text": "Perubahan iklim global mempengaruhi pola cuaca dan mengancam ketahanan pangan di berbagai negara.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "Error: Processing failed"
+        ],
+        "quality_score": 0.0,
+        "confidence_score": 0.0,
+        "neural_confidence": 0.0,
+        "semantic_similarity": 0.0,
+        "lexical_diversity": 0.0,
+        "syntactic_complexity": 0.0,
+        "fluency_score": 0.0,
+        "processing_time": 1.0047,
+        "word_changes": 0,
+        "syntax_changes": 0,
+        "success": false,
+        "error_message": "string indices must be integers, not 'str'",
+        "alternatives": []
+      },
+      "total_processing_time": 1.0047
+    },
+    {
+      "experiment_id": "EXP-20260112_175545",
+      "timestamp": "2026-01-12T17:55:46.210861",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Penggunaan media sosial telah mengubah cara masyarakat berkomunikasi dan berinteraksi.",
+        "word_count": 10
+      },
+      "result": {
+        "original_text": "Penggunaan media sosial telah mengubah cara masyarakat berkomunikasi dan berinteraksi.",
+        "paraphrased_text": "Penggunaan media sosial telah mengubah cara masyarakat berkomunikasi dan berinteraksi.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "Error: Processing failed"
+        ],
+        "quality_score": 0.0,
+        "confidence_score": 0.0,
+        "neural_confidence": 0.0,
+        "semantic_similarity": 0.0,
+        "lexical_diversity": 0.0,
+        "syntactic_complexity": 0.0,
+        "fluency_score": 0.0,
+        "processing_time": 0.7794,
+        "word_changes": 0,
+        "syntax_changes": 0,
+        "success": false,
+        "error_message": "string indices must be integers, not 'str'",
+        "alternatives": []
+      },
+      "total_processing_time": 0.7794
+    },
+    {
+      "experiment_id": "EXP-20260112_175546",
+      "timestamp": "2026-01-12T17:55:47.359927",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Hasil penelitian menunjukkan bahwa motivasi belajar berpengaruh terhadap prestasi akademik siswa.",
+        "word_count": 11
+      },
+      "result": {
+        "original_text": "Hasil penelitian menunjukkan bahwa motivasi belajar berpengaruh terhadap prestasi akademik siswa.",
+        "paraphrased_text": "Hasil penelitian menunjukkan bahwa motivasi belajar berpengaruh terhadap prestasi akademik siswa.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "Error: Processing failed"
+        ],
+        "quality_score": 0.0,
+        "confidence_score": 0.0,
+        "neural_confidence": 0.0,
+        "semantic_similarity": 0.0,
+        "lexical_diversity": 0.0,
+        "syntactic_complexity": 0.0,
+        "fluency_score": 0.0,
+        "processing_time": 1.1486,
+        "word_changes": 0,
+        "syntax_changes": 0,
+        "success": false,
+        "error_message": "string indices must be integers, not 'str'",
+        "alternatives": []
+      },
+      "total_processing_time": 1.1486
+    },
+    {
+      "experiment_id": "EXP-20260112_175547",
+      "timestamp": "2026-01-12T17:55:48.349034",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Ekonomi digital membuka peluang baru bagi pelaku usaha mikro kecil dan menengah.",
+        "word_count": 12
+      },
+      "result": {
+        "original_text": "Ekonomi digital membuka peluang baru bagi pelaku usaha mikro kecil dan menengah.",
+        "paraphrased_text": "Ekonomi digital membuka peluang baru bagi pelaku usaha mikro kecil dan menengah.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "Error: Processing failed"
+        ],
+        "quality_score": 0.0,
+        "confidence_score": 0.0,
+        "neural_confidence": 0.0,
+        "semantic_similarity": 0.0,
+        "lexical_diversity": 0.0,
+        "syntactic_complexity": 0.0,
+        "fluency_score": 0.0,
+        "processing_time": 0.9885,
+        "word_changes": 0,
+        "syntax_changes": 0,
+        "success": false,
+        "error_message": "string indices must be integers, not 'str'",
+        "alternatives": []
+      },
+      "total_processing_time": 0.9885
+    },
+    {
+      "experiment_id": "EXP-20260112_175548",
+      "timestamp": "2026-01-12T17:55:49.066819",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Pendidikan karakter menjadi fokus utama dalam kurikulum pendidikan nasional saat ini.",
+        "word_count": 11
+      },
+      "result": {
+        "original_text": "Pendidikan karakter menjadi fokus utama dalam kurikulum pendidikan nasional saat ini.",
+        "paraphrased_text": "Pendidikan karakter menjadi fokus utama dalam kurikulum pendidikan nasional saat ini.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "Error: Processing failed"
+        ],
+        "quality_score": 0.0,
+        "confidence_score": 0.0,
+        "neural_confidence": 0.0,
+        "semantic_similarity": 0.0,
+        "lexical_diversity": 0.0,
+        "syntactic_complexity": 0.0,
+        "fluency_score": 0.0,
+        "processing_time": 0.717,
+        "word_changes": 0,
+        "syntax_changes": 0,
+        "success": false,
+        "error_message": "string indices must be integers, not 'str'",
+        "alternatives": []
+      },
+      "total_processing_time": 0.717
+    },
+    {
+      "experiment_id": "EXP-20260112_175549",
+      "timestamp": "2026-01-12T17:55:50.012909",
+      "configuration": {
+        "model_name": "Wikidepia/IndoT5-base",
+        "method": "hybrid",
+        "synonym_rate": 0.3,
+        "quality_threshold": 60.0,
+        "use_gpu": false
+      },
+      "input": {
+        "text": "Inovasi teknologi informasi membantu meningkatkan efisiensi dalam berbagai sektor industri.",
+        "word_count": 10
+      },
+      "result": {
+        "original_text": "Inovasi teknologi informasi membantu meningkatkan efisiensi dalam berbagai sektor industri.",
+        "paraphrased_text": "Inovasi teknologi informasi membantu meningkatkan efisiensi dalam berbagai sektor industri.",
+        "method_used": "hybrid",
+        "transformations_applied": [
+          "Error: Processing failed"
+        ],
+        "quality_score": 0.0,
+        "confidence_score": 0.0,
+        "neural_confidence": 0.0,
+        "semantic_similarity": 0.0,
+        "lexical_diversity": 0.0,
+        "syntactic_complexity": 0.0,
+        "fluency_score": 0.0,
+        "processing_time": 0.9457,
+        "word_changes": 0,
+        "syntax_changes": 0,
+        "success": false,
+        "error_message": "'list' object has no attribute 'get'",
+        "alternatives": []
+      },
+      "total_processing_time": 0.9457
+    }
+  ]
+}

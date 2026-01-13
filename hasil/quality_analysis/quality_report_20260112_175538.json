@@ -1,0 +1,39 @@
+{
+  "report_id": "QUALITY-20260112_175550",
+  "timestamp": "2026-01-12T17:55:50.015843",
+  "source_batch": "BATCH-20260112_175539",
+  "total_samples": 10,
+  "successful_samples": 0,
+  "metrics": {
+    "quality_score": {
+      "min": 0,
+      "max": 0,
+      "avg": 0,
+      "std": 0
+    },
+    "semantic_similarity": {
+      "min": 0,
+      "max": 0,
+      "avg": 0,
+      "std": 0
+    },
+    "lexical_diversity": {
+      "min": 0,
+      "max": 0,
+      "avg": 0,
+      "std": 0
+    },
+    "fluency_score": {
+      "min": 0,
+      "max": 0,
+      "avg": 0,
+      "std": 0
+    },
+    "processing_time": {
+      "min": 0,
+      "max": 0,
+      "avg": 0,
+      "std": 0
+    }
+  }
+}

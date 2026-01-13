@@ -1,0 +1,246 @@
+{
+  "comparison_id": "COMPARE-20260112_180021",
+  "timestamp": "2026-01-12T18:00:29.390870",
+  "configuration": {
+    "model_name": "Wikidepia/IndoT5-base",
+    "synonym_rate": 0.3,
+    "quality_threshold": 60.0
+  },
+  "test_sentences_count": 3,
+  "method_comparison": {
+    "hybrid": {
+      "summary": {
+        "total_sentences": 3,
+        "success_count": 0,
+        "success_rate": 0.0,
+        "average_quality_score": 0.0,
+        "average_semantic_similarity": 0.0,
+        "total_processing_time": 4.76,
+        "average_processing_time": 1.59
+      },
+      "sample_results": [
+        {
+          "original_text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+          "paraphrased_text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+          "method_used": "hybrid",
+          "transformations_applied": [
+            "Error: Processing failed"
+          ],
+          "quality_score": 0.0,
+          "confidence_score": 0.0,
+          "neural_confidence": 0.0,
+          "semantic_similarity": 0.0,
+          "lexical_diversity": 0.0,
+          "syntactic_complexity": 0.0,
+          "fluency_score": 0.0,
+          "processing_time": 1.1095,
+          "word_changes": 0,
+          "syntax_changes": 0,
+          "success": false,
+          "error_message": "string indices must be integers, not 'str'",
+          "alternatives": []
+        },
+        {
+          "original_text": "Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.",
+          "paraphrased_text": "Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.",
+          "method_used": "hybrid",
+          "transformations_applied": [
+            "Error: Processing failed"
+          ],
+          "quality_score": 0.0,
+          "confidence_score": 0.0,
+          "neural_confidence": 0.0,
+          "semantic_similarity": 0.0,
+          "lexical_diversity": 0.0,
+          "syntactic_complexity": 0.0,
+          "fluency_score": 0.0,
+          "processing_time": 2.5272,
+          "word_changes": 0,
+          "syntax_changes": 0,
+          "success": false,
+          "error_message": "string indices must be integers, not 'str'",
+          "alternatives": []
+        },
+        {
+          "original_text": "Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.",
+          "paraphrased_text": "Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.",
+          "method_used": "hybrid",
+          "transformations_applied": [
+            "Error: Processing failed"
+          ],
+          "quality_score": 0.0,
+          "confidence_score": 0.0,
+          "neural_confidence": 0.0,
+          "semantic_similarity": 0.0,
+          "lexical_diversity": 0.0,
+          "syntactic_complexity": 0.0,
+          "fluency_score": 0.0,
+          "processing_time": 1.1193,
+          "word_changes": 0,
+          "syntax_changes": 0,
+          "success": false,
+          "error_message": "string indices must be integers, not 'str'",
+          "alternatives": []
+        }
+      ]
+    },
+    "neural": {
+      "summary": {
+        "total_sentences": 3,
+        "success_count": 3,
+        "success_rate": 100.0,
+        "average_quality_score": 28.76,
+        "average_semantic_similarity": 0.093,
+        "total_processing_time": 3.59,
+        "average_processing_time": 1.2
+      },
+      "sample_results": [
+        {
+          "original_text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+          "paraphrased_text": "paraphrase: paraphrase: Paraphrase: Paraphrase.",
+          "method_used": "neural",
+          "transformations_applied": [
+            "neural_generation"
+          ],
+          "quality_score": 28.709999084472656,
+          "confidence_score": 0.777999997138977,
+          "neural_confidence": 0.4909,
+          "semantic_similarity": 0.11029999703168869,
+          "lexical_diversity": 0.1818,
+          "syntactic_complexity": 0.3333,
+          "fluency_score": 0.6818,
+          "processing_time": 1.1144,
+          "word_changes": 11,
+          "syntax_changes": 1,
+          "success": true,
+          "error_message": null,
+          "alternatives": []
+        },
+        {
+          "original_text": "Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.",
+          "paraphrased_text": ":ity: Paraphrase: Paraphrase: Paraphrase: Paraphrase:",
+          "method_used": "neural",
+          "transformations_applied": [
+            "neural_generation"
+          ],
+          "quality_score": 28.18000030517578,
+          "confidence_score": 0.8151999711990356,
+          "neural_confidence": 0.5333,
+          "semantic_similarity": 0.09099999815225601,
+          "lexical_diversity": 0.1667,
+          "syntactic_complexity": 0.3333,
+          "fluency_score": 0.7083,
+          "processing_time": 1.3358,
+          "word_changes": 12,
+          "syntax_changes": 1,
+          "success": true,
+          "error_message": null,
+          "alternatives": []
+        },
+        {
+          "original_text": "Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.",
+          "paraphrased_text": ":phrase: Paraphrase: Paraphrase: Paraphrase:",
+          "method_used": "neural",
+          "transformations_applied": [
+            "neural_generation"
+          ],
+          "quality_score": 29.3799991607666,
+          "confidence_score": 0.849399983882904,
+          "neural_confidence": 0.5556,
+          "semantic_similarity": 0.07760000228881836,
+          "lexical_diversity": 0.2222,
+          "syntactic_complexity": 0.3333,
+          "fluency_score": 0.7222,
+          "processing_time": 1.1393,
+          "word_changes": 9,
+          "syntax_changes": 1,
+          "success": true,
+          "error_message": null,
+          "alternatives": []
+        }
+      ]
+    },
+    "rule-based": {
+      "summary": {
+        "total_sentences": 3,
+        "success_count": 3,
+        "success_rate": 100.0,
+        "average_quality_score": 28.76,
+        "average_semantic_similarity": 0.093,
+        "total_processing_time": 0.0,
+        "average_processing_time": 0.0
+      },
+      "sample_results": [
+        {
+          "original_text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+          "paraphrased_text": "paraphrase: paraphrase: Paraphrase: Paraphrase.",
+          "method_used": "neural",
+          "transformations_applied": [
+            "neural_generation"
+          ],
+          "quality_score": 28.709999084472656,
+          "confidence_score": 0.777999997138977,
+          "neural_confidence": 0.4909,
+          "semantic_similarity": 0.11029999703168869,
+          "lexical_diversity": 0.1818,
+          "syntactic_complexity": 0.3333,
+          "fluency_score": 0.6818,
+          "processing_time": 0.0,
+          "word_changes": 11,
+          "syntax_changes": 1,
+          "success": true,
+          "error_message": null,
+          "alternatives": []
+        },
+        {
+          "original_text": "Teknologi artificial intelligence berkembang pesat dalam dekade terakhir dan memberikan dampak signifikan.",
+          "paraphrased_text": ":ity: Paraphrase: Paraphrase: Paraphrase: Paraphrase:",
+          "method_used": "neural",
+          "transformations_applied": [
+            "neural_generation"
+          ],
+          "quality_score": 28.18000030517578,
+          "confidence_score": 0.8151999711990356,
+          "neural_confidence": 0.5333,
+          "semantic_similarity": 0.09099999815225601,
+          "lexical_diversity": 0.1667,
+          "syntactic_complexity": 0.3333,
+          "fluency_score": 0.7083,
+          "processing_time": 0.0,
+          "word_changes": 12,
+          "syntax_changes": 1,
+          "success": true,
+          "error_message": null,
+          "alternatives": []
+        },
+        {
+          "original_text": "Pemerintah Indonesia mencanangkan program digitalisasi untuk meningkatkan pelayanan publik.",
+          "paraphrased_text": ":phrase: Paraphrase: Paraphrase: Paraphrase:",
+          "method_used": "neural",
+          "transformations_applied": [
+            "neural_generation"
+          ],
+          "quality_score": 29.3799991607666,
+          "confidence_score": 0.849399983882904,
+          "neural_confidence": 0.5556,
+          "semantic_similarity": 0.07760000228881836,
+          "lexical_diversity": 0.2222,
+          "syntactic_complexity": 0.3333,
+          "fluency_score": 0.7222,
+          "processing_time": 0.0,
+          "word_changes": 9,
+          "syntax_changes": 1,
+          "success": true,
+          "error_message": null,
+          "alternatives": []
+        }
+      ]
+    }
+  },
+  "analysis": {
+    "best_quality": "neural",
+    "best_semantic": "neural",
+    "fastest": "rule-based",
+    "highest_success": "neural"
+  }
+}

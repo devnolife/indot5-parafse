@@ -1,0 +1,37 @@
+{
+  "experiment_id": "EXP-20260112_175406",
+  "timestamp": "2026-01-12T17:54:07.737971",
+  "configuration": {
+    "model_name": "Wikidepia/IndoT5-base",
+    "method": "hybrid",
+    "synonym_rate": 0.3,
+    "quality_threshold": 60.0,
+    "use_gpu": false
+  },
+  "input": {
+    "text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+    "word_count": 11
+  },
+  "result": {
+    "original_text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+    "paraphrased_text": "Penelitian ini menggunakan metode kualitatif untuk menganalisis data wawancara dari responden.",
+    "method_used": "hybrid",
+    "transformations_applied": [
+      "Error: Processing failed"
+    ],
+    "quality_score": 0.0,
+    "confidence_score": 0.0,
+    "neural_confidence": 0.0,
+    "semantic_similarity": 0.0,
+    "lexical_diversity": 0.0,
+    "syntactic_complexity": 0.0,
+    "fluency_score": 0.0,
+    "processing_time": 1.2761,
+    "word_changes": 0,
+    "syntax_changes": 0,
+    "success": false,
+    "error_message": "'list' object has no attribute 'get'",
+    "alternatives": []
+  },
+  "total_processing_time": 1.2761
+}
