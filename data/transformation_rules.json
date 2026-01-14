@@ -1,212 +1,124 @@
 {
   "active_to_passive": [
     {
-      "pattern": "(\\w+)\\s+(me\\w+)\\s+(\\w+)",
-      "replacement": "\\3 di\\2 oleh \\1",
-      "description": "Transform me- verbs from active to passive voice",
-      "examples": [
-        {
-          "input": "Peneliti menganalisis data",
-          "output": "Data dianalisis oleh peneliti"
-        },
-        {
-          "input": "Mahasiswa mempelajari materi",
-          "output": "Materi dipelajari oleh mahasiswa"
-        }
-      ]
+      "pattern": "^(Peneliti|Tim|Mahasiswa|Penulis|Pengamat)\\s+menganalisis\\s+(\\w+)",
+      "replacement": "\\2 dianalisis oleh \\1",
+      "description": "menganalisis -> dianalisis (subject di awal)"
     },
     {
-      "pattern": "(\\w+)\\s+(meng\\w+)\\s+(\\w+)",
-      "replacement": "\\3 di\\2 oleh \\1",
-      "description": "Transform meng- verbs from active to passive voice",
-      "examples": [
-        {
-          "input": "Tim mengembangkan sistem",
-          "output": "Sistem dikembangkan oleh tim"
-        }
-      ]
+      "pattern": "^(Peneliti|Tim|Mahasiswa|Penulis)\\s+mempelajari\\s+(\\w+)",
+      "replacement": "\\2 dipelajari oleh \\1", 
+      "description": "mempelajari -> dipelajari (subject di awal)"
+    },
+    {
+      "pattern": "^(Peneliti|Tim|Penulis)\\s+mengembangkan\\s+(\\w+)",
+      "replacement": "\\2 dikembangkan oleh \\1",
+      "description": "mengembangkan -> dikembangkan (subject di awal)"
     }
   ],
   "passive_to_active": [
     {
-      "pattern": "(\\w+)\\s+di(\\w+)\\s+oleh\\s+(\\w+)",
-      "replacement": "\\3 me\\2 \\1",
-      "description": "Transform passive voice back to active voice",
-      "examples": [
-        {
-          "input": "Data dianalisis oleh peneliti",
-          "output": "Peneliti menganalisis data"
-        }
-      ]
+      "pattern": "(\\w+)\\s+dianalisis\\s+oleh\\s+(\\w+)",
+      "replacement": "\\2 menganalisis \\1",
+      "description": "Transform passive voice back to active voice"
     }
   ],
   "clause_reordering": [
     {
-      "pattern": "([^,]+),\\s*(karena|sebab|oleh karena|dikarenakan)\\s+([^.]+)",
-      "replacement": "\\2 \\3, \\1",
-      "description": "Reorder causal clauses",
-      "examples": [
-        {
-          "input": "Hasil penelitian baik, karena metodologi yang tepat",
-          "output": "Karena metodologi yang tepat, hasil penelitian baik"
-        }
-      ]
-    },
-    {
-      "pattern": "([^,]+),\\s*(sehingga|akibatnya|dengan demikian)\\s+([^.]+)",
-      "replacement": "\\2 \\3, \\1",
-      "description": "Reorder consequential clauses",
-      "examples": [
-        {
-          "input": "Metode efektif, sehingga hasil optimal",
-          "output": "Sehingga hasil optimal, metode efektif"
-        }
-      ]
-    },
-    {
-      "pattern": "([^,]+),\\s*(jika|apabila|bila|manakala)\\s+([^.]+)",
-      "replacement": "\\2 \\3, \\1",
-      "description": "Reorder conditional clauses",
-      "examples": [
-        {
-          "input": "Analisis akurat, jika data valid",
-          "output": "Jika data valid, analisis akurat"
-        }
-      ]
+      "pattern": "([^,]+),\\s*(karena|sebab|oleh karena)\\s+([^.]+)\\.",
+      "replacement": "\\2 \\3, \\1.",
+      "description": "Reorder causal clauses"
     }
   ],
   "conjunction_substitution": {
     "dan": {
-      "alternatives": ["serta", "juga", "plus", "ditambah", "beserta"],
-      "context": "additive",
-      "examples": [
-        {
-          "input": "Metode dan hasil",
-          "output": "Metode serta hasil"
-        }
-      ]
-    },
-    "atau": {
-      "alternatives": ["ataupun", "maupun", "alias"],
-      "context": "alternative",
-      "examples": [
-        {
-          "input": "Input atau output",
-          "output": "Input ataupun output"
-        }
-      ]
+      "alternatives": ["serta", "juga"],
+      "context": "additive"
     },
     "tetapi": {
-      "alternatives": ["namun", "akan tetapi", "meski demikian", "namun demikian"],
-      "context": "contrastive",
-      "examples": [
-        {
-          "input": "Bagus tetapi lambat",
-          "output": "Bagus namun lambat"
-        }
-      ]
+      "alternatives": ["namun", "akan tetapi"],
+      "context": "adversative"
     },
     "karena": {
-      "alternatives": ["sebab", "oleh karena", "dikarenakan", "lantaran", "akibat"],
-      "context": "causal",
-      "examples": [
-        {
-          "input": "Gagal karena kesalahan",
-          "output": "Gagal sebab kesalahan"
-        }
-      ]
+      "alternatives": ["sebab", "lantaran"],
+      "context": "causal"
     },
-    "sehingga": {
-      "alternatives": ["akibatnya", "dengan demikian", "maka", "sampai", "hingga"],
-      "context": "consequential",
-      "examples": [
-        {
-          "input": "Efektif sehingga optimal",
-          "output": "Efektif akibatnya optimal"
-        }
-      ]
+    "jika": {
+      "alternatives": ["apabila", "bila", "kalau"],
+      "context": "conditional"
+    },
+    "atau": {
+      "alternatives": ["ataupun", "maupun"],
+      "context": "alternative"
+    },
+    "dengan": {
+      "alternatives": ["melalui", "lewat"],
+      "context": "instrumental"
+    },
+    "untuk": {
+      "alternatives": ["guna", "demi", "buat"],
+      "context": "purpose"
+    },
+    "pada": {
+      "alternatives": ["di", "dalam"],
+      "context": "locative"
+    },
+    "sangat": {
+      "alternatives": ["amat", "sungguh", "benar-benar"],
+      "context": "intensifier"
+    },
+    "banyak": {
+      "alternatives": ["berlimpah", "sejumlah besar"],
+      "context": "quantifier"
     }
   },
   "modifier_adjustment": [
     {
-      "pattern": "(\\w+)\\s+(yang\\s+)?sangat\\s+(\\w+)",
-      "replacement": "\\1 \\2amat \\3",
-      "description": "Replace intensity modifier 'sangat' with 'amat'",
-      "examples": [
-        {
-          "input": "Metode yang sangat efektif",
-          "output": "Metode yang amat efektif"
-        }
-      ]
+      "pattern": "\\bsangat\\b",
+      "replacement": "amat",
+      "description": "sangat -> amat"
     },
     {
-      "pattern": "(\\w+)\\s+(yang\\s+)?amat\\s+(\\w+)",
-      "replacement": "\\1 \\2sungguh \\3",
-      "description": "Replace intensity modifier 'amat' with 'sungguh'",
-      "examples": [
-        {
-          "input": "Hasil yang amat baik",
-          "output": "Hasil yang sungguh baik"
-        }
-      ]
+      "pattern": "\\bselalu\\b",
+      "replacement": "senantiasa",
+      "description": "selalu -> senantiasa"
     },
     {
-      "pattern": "(\\w+)\\s+(yang\\s+)?cukup\\s+(\\w+)",
-      "replacement": "\\1 \\2agak \\3",
-      "description": "Replace degree modifier 'cukup' with 'agak'",
-      "examples": [
-        {
-          "input": "Analisis yang cukup mendalam",
-          "output": "Analisis yang agak mendalam"
-        }
-      ]
+      "pattern": "\\bsering\\b",
+      "replacement": "kerap",
+      "description": "sering -> kerap"
+    },
+    {
+      "pattern": "\\bcepat\\b",
+      "replacement": "segera",
+      "description": "cepat -> segera"
+    },
+    {
+      "pattern": "\\bpenting\\b",
+      "replacement": "krusial",
+      "description": "penting -> krusial"
+    },
+    {
+      "pattern": "\\bbesar\\b",
+      "replacement": "signifikan",
+      "description": "besar -> signifikan"
     }
   ],
-  "temporal_markers": {
-    "sebelum": {
-      "alternatives": ["sebelumnya", "prior", "dahulu", "lebih dulu"],
-      "context": "temporal_before",
-      "examples": [
-        {
-          "input": "Sebelum analisis",
-          "output": "Sebelumnya analisis"
-        }
-      ]
+  "sentence_structure": [
+    {
+      "pattern": "\\badalah\\b",
+      "replacement": "merupakan",
+      "description": "adalah -> merupakan"
     },
-    "sesudah": {
-      "alternatives": ["setelah", "seusai", "sehabis", "kemudian", "lalu"],
-      "context": "temporal_after",
-      "examples": [
-        {
-          "input": "Sesudah penelitian",
-          "output": "Setelah penelitian"
-        }
-      ]
+    {
+      "pattern": "\\bmerupakan\\b",
+      "replacement": "adalah",
+      "description": "merupakan -> adalah"
     },
-    "ketika": {
-      "alternatives": ["saat", "waktu", "tatkala", "kala", "sewaktu"],
-      "context": "temporal_when",
-      "examples": [
-        {
-          "input": "Ketika analisis berlangsung",
-          "output": "Saat analisis berlangsung"
-        }
-      ]
+    {
+      "pattern": "\\byaitu\\b",
+      "replacement": "yakni",
+      "description": "yaitu -> yakni"
     }
-  },
-  "metadata": {
-    "version": "2.0",
-    "language": "Indonesian",
-    "total_patterns": 45,
-    "categories": [
-      "active_to_passive",
-      "passive_to_active", 
-      "clause_reordering",
-      "conjunction_substitution",
-      "modifier_adjustment",
-      "temporal_markers"
-    ],
-    "description": "Comprehensive syntactic transformation rules for Indonesian text paraphrasing",
-    "last_updated": "2024-01-15"
-  }
+  ]
 }

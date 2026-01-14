@@ -201,9 +201,14 @@ class IndoT5HybridParaphraser:
             'karena', 'sebab', 'sehingga', 'meski', 'walaupun', 'meskipun'
         }
     
-    def _neural_paraphrase(self, text: str, num_beams: int = 4, temperature: float = 0.8) -> Tuple[str, float]:
+    def _neural_paraphrase(self, text: str, num_beams: int = 5, temperature: float = 1.2) -> Tuple[str, float]:
         """
         Generate paraphrase using IndoT5 neural model
+        
+        IndoT5 works best with:
+        1. Direct input without prefix (or minimal prefix)
+        2. Nucleus sampling with higher temperature for variation
+        3. Multiple candidate generation and selection
         
         Args:
             text: Input text
@@ -214,10 +219,10 @@ class IndoT5HybridParaphraser:
             Tuple of (paraphrased_text, confidence_score)
         """
         try:
-            # Prepare input
-            input_text = f"paraphrase: {text}"
+            # IndoT5 works better without complex prefix
+            # Use the text directly for more natural output
             inputs = self.tokenizer(
-                input_text,
+                text,
                 return_tensors="pt",
                 max_length=512,
                 truncation=True,
@@ -227,25 +232,76 @@ class IndoT5HybridParaphraser:
             if self.use_gpu:
                 inputs = {k: v.to(self.device) for k, v in inputs.items()}
             
-            # Generate
+            # Generate multiple candidates and pick the best one
+            candidates = []
+            
+            # Strategy 1: Nucleus Sampling (more creative)
             with torch.no_grad():
                 outputs = self.model.generate(
                     **inputs,
-                    max_length=512,
-                    num_beams=num_beams,
-                    temperature=temperature,
+                    max_length=min(len(text.split()) * 3, 256),
+                    num_return_sequences=3,
                     do_sample=True,
-                    early_stopping=True,
-                    pad_token_id=self.tokenizer.pad_token_id
+                    temperature=temperature,
+                    top_p=0.92,
+                    top_k=50,
+                    repetition_penalty=1.2,
+                    no_repeat_ngram_size=2,
+                    pad_token_id=self.tokenizer.pad_token_id,
+                    eos_token_id=self.tokenizer.eos_token_id
                 )
             
-            # Decode
-            paraphrased = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+            for output in outputs:
+                decoded = self.tokenizer.decode(output, skip_special_tokens=True)
+                # Clean up output
+                decoded = decoded.strip()
+                if decoded and len(decoded) > 5:
+                    candidates.append(decoded)
             
-            # Calculate confidence (simplified)
-            confidence = min(1.0, len(paraphrased.split()) / len(text.split()) * 0.8 + 0.2)
+            if not candidates:
+                # Fallback: return original text
+                return text, 0.0
             
-            return paraphrased, confidence
+            # Select the best candidate based on:
+            # 1. Length similarity to original
+            # 2. Not identical to original
+            # 3. Contains meaningful content
+            original_words = set(text.lower().split())
+            best_candidate = None
+            best_score = -1
+            
+            for candidate in candidates:
+                # Skip if too similar or too different
+                if candidate.lower() == text.lower():
+                    continue
+                
+                candidate_words = set(candidate.lower().split())
+                
+                # Calculate overlap (should be moderate, not too high or low)
+                if len(candidate_words) == 0:
+                    continue
+                    
+                overlap = len(original_words & candidate_words) / max(len(original_words), 1)
+                length_ratio = len(candidate.split()) / max(len(text.split()), 1)
+                
+                # Score: prefer moderate overlap (40-80%) and similar length
+                overlap_score = 1.0 - abs(overlap - 0.6) * 2  # Peak at 60% overlap
+                length_score = 1.0 - abs(length_ratio - 1.0)  # Peak at same length
+                
+                score = overlap_score * 0.6 + length_score * 0.4
+                
+                if score > best_score:
+                    best_score = score
+                    best_candidate = candidate
+            
+            if best_candidate:
+                confidence = min(1.0, best_score * 0.8 + 0.2)
+                return best_candidate, confidence
+            elif candidates:
+                # If no good candidate, return the first one
+                return candidates[0], 0.5
+            else:
+                return text, 0.0
             
         except Exception as e:
             logger.error(f"❌ Neural paraphrase failed: {e}")
@@ -292,6 +348,15 @@ class IndoT5HybridParaphraser:
                 if synonyms:
                     # Choose random synonym
                     chosen_synonym = random.choice(synonyms)
+                    
+                    # PREVENT DUPLICATE: Check if chosen synonym matches previous or next word
+                    prev_word = result[-1].lower().strip('.,!?;:"') if result else ""
+                    synonym_clean = chosen_synonym.lower().strip('.,!?;:"')
+                    
+                    # Skip if synonym would create "kunci kunci" type duplication
+                    if synonym_clean == prev_word:
+                        result.append(word)
+                        continue
                     
                     # Preserve original word format
                     if word.isupper():
@@ -468,9 +533,10 @@ class IndoT5HybridParaphraser:
                 error_message="Empty input text"
             )
         
-        # Check cache
-        if self.enable_caching and text in self._result_cache:
-            cached_result = self._result_cache[text]
+        # Check cache (include method in cache key)
+        cache_key = f"{method}:{text}"
+        if self.enable_caching and cache_key in self._result_cache:
+            cached_result = self._result_cache[cache_key]
             cached_result.processing_time = time.time() - start_time
             return cached_result
         
@@ -545,9 +611,9 @@ class IndoT5HybridParaphraser:
                 success=True
             )
             
-            # Cache result
+            # Cache result (include method in cache key)
             if self.enable_caching:
-                self._result_cache[text] = result
+                self._result_cache[cache_key] = result
             
             return result
             

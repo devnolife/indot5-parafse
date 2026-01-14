@@ -170,3 +170,101 @@ that match your environment. Please note that you may need to restart your runti
 2026-01-13 17:17:37,519 - utils.file_parser - INFO - 📄 Split text into 2 chunks
 2026-01-13 17:17:37,519 - werkzeug - INFO - 127.0.0.1 - - [13/Jan/2026 17:17:37] "POST /upload HTTP/1.1" 200 -
 2026-01-13 17:17:57,920 - werkzeug - INFO - 127.0.0.1 - - [13/Jan/2026 17:17:57] "POST /paraphrase-chunks HTTP/1.1" 200 -
+2026-01-14 01:11:09,754 - engines.indot5_hybrid_engine - INFO - 🔄 Loading IndoT5 model: Wikidepia/IndoT5-base
+2026-01-14 01:11:12,008 - engines.indot5_hybrid_engine - ERROR - ❌ Error loading models: Converting from SentencePiece and Tiktoken failed, if a converter for SentencePiece is available, provide a model path with a SentencePiece tokenizer.model file.Currently available slow->fast converters: ['AlbertTokenizer', 'BartTokenizer', 'BarthezTokenizer', 'BertTokenizer', 'BigBirdTokenizer', 'BlenderbotTokenizer', 'CamembertTokenizer', 'CLIPTokenizer', 'CodeGenTokenizer', 'ConvBertTokenizer', 'DebertaTokenizer', 'DebertaV2Tokenizer', 'DistilBertTokenizer', 'DPRReaderTokenizer', 'DPRQuestionEncoderTokenizer', 'DPRContextEncoderTokenizer', 'ElectraTokenizer', 'FNetTokenizer', 'FunnelTokenizer', 'GPT2Tokenizer', 'HerbertTokenizer', 'LayoutLMTokenizer', 'LayoutLMv2Tokenizer', 'LayoutLMv3Tokenizer', 'LayoutXLMTokenizer', 'LongformerTokenizer', 'LEDTokenizer', 'LxmertTokenizer', 'MarkupLMTokenizer', 'MBartTokenizer', 'MBart50Tokenizer', 'MPNetTokenizer', 'MobileBertTokenizer', 'MvpTokenizer', 'NllbTokenizer', 'OpenAIGPTTokenizer', 'PegasusTokenizer', 'Qwen2Tokenizer', 'RealmTokenizer', 'ReformerTokenizer', 'RemBertTokenizer', 'RetriBertTokenizer', 'RobertaTokenizer', 'RoFormerTokenizer', 'SeamlessM4TTokenizer', 'SqueezeBertTokenizer', 'T5Tokenizer', 'UdopTokenizer', 'WhisperTokenizer', 'XLMRobertaTokenizer', 'XLNetTokenizer', 'SplinterTokenizer', 'XGLMTokenizer', 'LlamaTokenizer', 'CodeLlamaTokenizer', 'GemmaTokenizer', 'Phi3Tokenizer']
+2026-01-14 01:11:12,009 - app - ERROR - Failed to initialize paraphraser: Converting from SentencePiece and Tiktoken failed, if a converter for SentencePiece is available, provide a model path with a SentencePiece tokenizer.model file.Currently available slow->fast converters: ['AlbertTokenizer', 'BartTokenizer', 'BarthezTokenizer', 'BertTokenizer', 'BigBirdTokenizer', 'BlenderbotTokenizer', 'CamembertTokenizer', 'CLIPTokenizer', 'CodeGenTokenizer', 'ConvBertTokenizer', 'DebertaTokenizer', 'DebertaV2Tokenizer', 'DistilBertTokenizer', 'DPRReaderTokenizer', 'DPRQuestionEncoderTokenizer', 'DPRContextEncoderTokenizer', 'ElectraTokenizer', 'FNetTokenizer', 'FunnelTokenizer', 'GPT2Tokenizer', 'HerbertTokenizer', 'LayoutLMTokenizer', 'LayoutLMv2Tokenizer', 'LayoutLMv3Tokenizer', 'LayoutXLMTokenizer', 'LongformerTokenizer', 'LEDTokenizer', 'LxmertTokenizer', 'MarkupLMTokenizer', 'MBartTokenizer', 'MBart50Tokenizer', 'MPNetTokenizer', 'MobileBertTokenizer', 'MvpTokenizer', 'NllbTokenizer', 'OpenAIGPTTokenizer', 'PegasusTokenizer', 'Qwen2Tokenizer', 'RealmTokenizer', 'ReformerTokenizer', 'RemBertTokenizer', 'RetriBertTokenizer', 'RobertaTokenizer', 'RoFormerTokenizer', 'SeamlessM4TTokenizer', 'SqueezeBertTokenizer', 'T5Tokenizer', 'UdopTokenizer', 'WhisperTokenizer', 'XLMRobertaTokenizer', 'XLNetTokenizer', 'SplinterTokenizer', 'XGLMTokenizer', 'LlamaTokenizer', 'CodeLlamaTokenizer', 'GemmaTokenizer', 'Phi3Tokenizer']
+2026-01-14 01:13:50,334 - engines.indot5_hybrid_engine - INFO - 🔄 Loading IndoT5 model: Wikidepia/IndoT5-base
+2026-01-14 01:13:55,858 - engines.indot5_hybrid_engine - INFO - 🔄 Loading semantic similarity model
+2026-01-14 01:13:55,860 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-14 01:13:55,860 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-01-14 01:14:00,002 - engines.indot5_hybrid_engine - INFO - ✅ Models loaded successfully
+2026-01-14 01:14:00,016 - engines.indot5_hybrid_engine - INFO - ✅ Loaded 128 synonyms
+2026-01-14 01:14:00,027 - engines.indot5_hybrid_engine - INFO - ✅ Loaded transformation rules
+2026-01-14 01:14:00,036 - engines.indot5_hybrid_engine - INFO - ✅ Loaded 78 stopwords
+2026-01-14 01:14:00,036 - engines.indot5_hybrid_engine - INFO - ✅ IndoT5 Hybrid Paraphraser initialized
+2026-01-14 01:14:00,036 - engines.indot5_hybrid_engine - INFO -    Model: Wikidepia/IndoT5-base
+2026-01-14 01:14:00,036 - engines.indot5_hybrid_engine - INFO -    Device: cpu
+2026-01-14 01:14:00,036 - engines.indot5_hybrid_engine - INFO -    GPU: False
+2026-01-14 01:14:00,037 - app - INFO - Paraphraser initialized successfully
+2026-01-14 01:14:00,052 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.14:5000
+2026-01-14 01:14:00,052 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-14 01:14:49,787 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 01:14:49] "GET / HTTP/1.1" 200 -
+2026-01-14 01:14:49,936 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 01:14:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-01-14 01:14:58,132 - app - INFO - Processing text: Ayam petelur menjadi salah satu komoditas peternak... with method: neural
+2026-01-14 01:15:13,905 - app - INFO - Generated 1 paraphrases
+2026-01-14 01:15:13,905 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 01:15:13] "POST /paraphrase HTTP/1.1" 200 -
+2026-01-14 16:33:20,040 - engines.indot5_hybrid_engine - INFO - 🔄 Loading IndoT5 model: Wikidepia/IndoT5-base
+2026-01-14 16:33:22,011 - engines.indot5_hybrid_engine - ERROR - ❌ Error loading models: Converting from SentencePiece and Tiktoken failed, if a converter for SentencePiece is available, provide a model path with a SentencePiece tokenizer.model file.Currently available slow->fast converters: ['AlbertTokenizer', 'BartTokenizer', 'BarthezTokenizer', 'BertTokenizer', 'BigBirdTokenizer', 'BlenderbotTokenizer', 'CamembertTokenizer', 'CLIPTokenizer', 'CodeGenTokenizer', 'ConvBertTokenizer', 'DebertaTokenizer', 'DebertaV2Tokenizer', 'DistilBertTokenizer', 'DPRReaderTokenizer', 'DPRQuestionEncoderTokenizer', 'DPRContextEncoderTokenizer', 'ElectraTokenizer', 'FNetTokenizer', 'FunnelTokenizer', 'GPT2Tokenizer', 'HerbertTokenizer', 'LayoutLMTokenizer', 'LayoutLMv2Tokenizer', 'LayoutLMv3Tokenizer', 'LayoutXLMTokenizer', 'LongformerTokenizer', 'LEDTokenizer', 'LxmertTokenizer', 'MarkupLMTokenizer', 'MBartTokenizer', 'MBart50Tokenizer', 'MPNetTokenizer', 'MobileBertTokenizer', 'MvpTokenizer', 'NllbTokenizer', 'OpenAIGPTTokenizer', 'PegasusTokenizer', 'Qwen2Tokenizer', 'RealmTokenizer', 'ReformerTokenizer', 'RemBertTokenizer', 'RetriBertTokenizer', 'RobertaTokenizer', 'RoFormerTokenizer', 'SeamlessM4TTokenizer', 'SqueezeBertTokenizer', 'T5Tokenizer', 'UdopTokenizer', 'WhisperTokenizer', 'XLMRobertaTokenizer', 'XLNetTokenizer', 'SplinterTokenizer', 'XGLMTokenizer', 'LlamaTokenizer', 'CodeLlamaTokenizer', 'GemmaTokenizer', 'Phi3Tokenizer']
+2026-01-14 16:33:22,013 - app - ERROR - Failed to initialize paraphraser: Converting from SentencePiece and Tiktoken failed, if a converter for SentencePiece is available, provide a model path with a SentencePiece tokenizer.model file.Currently available slow->fast converters: ['AlbertTokenizer', 'BartTokenizer', 'BarthezTokenizer', 'BertTokenizer', 'BigBirdTokenizer', 'BlenderbotTokenizer', 'CamembertTokenizer', 'CLIPTokenizer', 'CodeGenTokenizer', 'ConvBertTokenizer', 'DebertaTokenizer', 'DebertaV2Tokenizer', 'DistilBertTokenizer', 'DPRReaderTokenizer', 'DPRQuestionEncoderTokenizer', 'DPRContextEncoderTokenizer', 'ElectraTokenizer', 'FNetTokenizer', 'FunnelTokenizer', 'GPT2Tokenizer', 'HerbertTokenizer', 'LayoutLMTokenizer', 'LayoutLMv2Tokenizer', 'LayoutLMv3Tokenizer', 'LayoutXLMTokenizer', 'LongformerTokenizer', 'LEDTokenizer', 'LxmertTokenizer', 'MarkupLMTokenizer', 'MBartTokenizer', 'MBart50Tokenizer', 'MPNetTokenizer', 'MobileBertTokenizer', 'MvpTokenizer', 'NllbTokenizer', 'OpenAIGPTTokenizer', 'PegasusTokenizer', 'Qwen2Tokenizer', 'RealmTokenizer', 'ReformerTokenizer', 'RemBertTokenizer', 'RetriBertTokenizer', 'RobertaTokenizer', 'RoFormerTokenizer', 'SeamlessM4TTokenizer', 'SqueezeBertTokenizer', 'T5Tokenizer', 'UdopTokenizer', 'WhisperTokenizer', 'XLMRobertaTokenizer', 'XLNetTokenizer', 'SplinterTokenizer', 'XGLMTokenizer', 'LlamaTokenizer', 'CodeLlamaTokenizer', 'GemmaTokenizer', 'Phi3Tokenizer']
+2026-01-14 16:34:17,881 - engines.indot5_hybrid_engine - INFO - 🔄 Loading IndoT5 model: Wikidepia/IndoT5-base
+2026-01-14 16:34:23,399 - engines.indot5_hybrid_engine - INFO - 🔄 Loading semantic similarity model
+2026-01-14 16:34:23,401 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-14 16:34:23,401 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-01-14 16:34:27,533 - engines.indot5_hybrid_engine - INFO - ✅ Models loaded successfully
+2026-01-14 16:34:27,543 - engines.indot5_hybrid_engine - INFO - ✅ Loaded 128 synonyms
+2026-01-14 16:34:27,552 - engines.indot5_hybrid_engine - INFO - ✅ Loaded transformation rules
+2026-01-14 16:34:27,560 - engines.indot5_hybrid_engine - INFO - ✅ Loaded 78 stopwords
+2026-01-14 16:34:27,560 - engines.indot5_hybrid_engine - INFO - ✅ IndoT5 Hybrid Paraphraser initialized
+2026-01-14 16:34:27,560 - engines.indot5_hybrid_engine - INFO -    Model: Wikidepia/IndoT5-base
+2026-01-14 16:34:27,561 - engines.indot5_hybrid_engine - INFO -    Device: cpu
+2026-01-14 16:34:27,561 - engines.indot5_hybrid_engine - INFO -    GPU: False
+2026-01-14 16:34:27,561 - app - INFO - Paraphraser initialized successfully
+2026-01-14 16:34:27,571 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.66.44.55:5000
+2026-01-14 16:34:27,571 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-14 16:34:34,496 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 16:34:34] "GET / HTTP/1.1" 200 -
+2026-01-14 16:34:34,635 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 16:34:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-01-14 16:34:47,618 - app - INFO - Processing text: Sistem parafrase bahasa Indonesia dengan teknologi... with method: neural
+2026-01-14 16:35:04,493 - app - INFO - Generated 2 paraphrases
+2026-01-14 16:35:04,493 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 16:35:04] "POST /paraphrase HTTP/1.1" 200 -
+2026-01-14 16:35:29,088 - app - INFO - Processing text: Sistem parafrase bahasa Indonesia dengan teknologi... with method: hybrid
+2026-01-14 16:35:44,162 - app - INFO - Generated 3 paraphrases
+2026-01-14 16:35:44,163 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 16:35:44] "POST /paraphrase HTTP/1.1" 200 -
+2026-01-14 17:03:10,159 - engines.indot5_hybrid_engine - INFO - 🔄 Loading IndoT5 model: Wikidepia/IndoT5-base
+2026-01-14 17:03:14,314 - engines.indot5_hybrid_engine - INFO - 🔄 Loading semantic similarity model
+2026-01-14 17:03:14,317 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-14 17:03:14,317 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-01-14 17:03:18,229 - engines.indot5_hybrid_engine - INFO - ✅ Models loaded successfully
+2026-01-14 17:03:18,229 - engines.indot5_hybrid_engine - INFO - ✅ Loaded 128 synonyms
+2026-01-14 17:03:18,230 - engines.indot5_hybrid_engine - INFO - ✅ Loaded transformation rules
+2026-01-14 17:03:18,230 - engines.indot5_hybrid_engine - INFO - ✅ Loaded 78 stopwords
+2026-01-14 17:03:18,230 - engines.indot5_hybrid_engine - INFO - ✅ IndoT5 Hybrid Paraphraser initialized
+2026-01-14 17:03:18,230 - engines.indot5_hybrid_engine - INFO -    Model: Wikidepia/IndoT5-base
+2026-01-14 17:03:18,231 - engines.indot5_hybrid_engine - INFO -    Device: cpu
+2026-01-14 17:03:18,231 - engines.indot5_hybrid_engine - INFO -    GPU: False
+2026-01-14 17:03:18,231 - app - INFO - Paraphraser initialized successfully
+2026-01-14 17:03:18,239 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.66.44.55:5000
+2026-01-14 17:03:18,239 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-01-14 17:03:52,346 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 17:03:52] "[36mGET / HTTP/1.1[0m" 304 -
+2026-01-14 17:04:03,767 - app - INFO - Processing text: Sistem parafrase bahasa Indonesia dengan teknologi... with method: hybrid
+2026-01-14 17:04:07,128 - app - INFO - Generated 3 paraphrases
+2026-01-14 17:04:07,128 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 17:04:07] "POST /paraphrase HTTP/1.1" 200 -
+2026-01-14 17:04:13,424 - app - INFO - Processing text: Sistem parafrase bahasa Indonesia dengan teknologi... with method: neural
+2026-01-14 17:04:16,786 - app - INFO - Generated 3 paraphrases
+2026-01-14 17:04:16,786 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 17:04:16] "POST /paraphrase HTTP/1.1" 200 -
+2026-01-14 17:04:39,405 - app - INFO - Processing text: Berdasarkan data kelulusan peserta pelatihan KKA p... with method: neural
+2026-01-14 17:04:49,639 - app - INFO - Generated 3 paraphrases
+2026-01-14 17:04:49,639 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 17:04:49] "POST /paraphrase HTTP/1.1" 200 -
+2026-01-14 17:05:21,202 - app - INFO - Processing text: Berdasarkan data kelulusan peserta pelatihan KKA p... with method: hybrid
+2026-01-14 17:05:32,457 - app - INFO - Generated 3 paraphrases
+2026-01-14 17:05:32,457 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 17:05:32] "POST /paraphrase HTTP/1.1" 200 -
+2026-01-14 17:05:42,287 - app - INFO - Processing text: Berdasarkan data kelulusan peserta pelatihan KKA p... with method: rule-based
+2026-01-14 17:05:42,371 - app - INFO - Generated 3 paraphrases
+2026-01-14 17:05:42,371 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 17:05:42] "POST /paraphrase HTTP/1.1" 200 -
+2026-01-14 17:05:53,062 - app - INFO - Processing text: Berdasarkan data kelulusan peserta pelatihan KKA p... with method: hybrid
+2026-01-14 17:06:05,161 - app - INFO - Generated 3 paraphrases
+2026-01-14 17:06:05,161 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 17:06:05] "POST /paraphrase HTTP/1.1" 200 -
+2026-01-14 17:06:53,151 - app - INFO - Processing text: Berdasarkan data kelulusan peserta pelatihan KKA p... with method: neural
+2026-01-14 17:07:05,335 - app - INFO - Generated 3 paraphrases
+2026-01-14 17:07:05,335 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 17:07:05] "POST /paraphrase HTTP/1.1" 200 -
+2026-01-14 17:08:34,233 - app - INFO - Processing text: Berdasarkan data kelulusan peserta pelatihan KKA p... with method: hybrid
+2026-01-14 17:08:45,995 - app - INFO - Generated 3 paraphrases
+2026-01-14 17:08:45,995 - werkzeug - INFO - 127.0.0.1 - - [14/Jan/2026 17:08:45] "POST /paraphrase HTTP/1.1" 200 -
